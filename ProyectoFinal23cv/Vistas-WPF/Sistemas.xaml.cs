@@ -49,7 +49,7 @@ namespace ProyectoFinal23cv.Vistas_WPF
             }
             else
             {    //tarea realalizar la funcion editar y eliminar
-                // Editar usuario existente mediante su ID
+                // Editar usuario existente mediante su ID7
                 int userId = int.Parse(txtPkUser.Text);
                 usuario = services.GetUserById(userId);
 
