@@ -5,13 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal23cv"
         mc:Ignorable="d"
-        Title="Window" Height="560" Width="800">
-    <Grid>
-        <Label Content="Login" HorizontalAlignment="Left" Margin="279,26,0,0" VerticalAlignment="Top" Height="59" Width="175" FontSize="36"/>
-        <Label Content="User" HorizontalAlignment="Left" Margin="254,117,0,0" VerticalAlignment="Top" Height="65" Width="176" FontSize="22"/>
-        <TextBox HorizontalAlignment="Left" Margin="254,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Height="45" />
-        <Label Content="Password" HorizontalAlignment="Left" Margin="254,0,0,0" VerticalAlignment="Center" Height="42" Width="176" FontSize="22"/>
-        <TextBox HorizontalAlignment="Left" Margin="254,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Height="39" />
-        <Button x:Name="btnLogin" Content="Iniciar" HorizontalAlignment="Left" Margin="279,388,0,0" VerticalAlignment="Top" Height="62" Width="148" FontSize="20" Background="Red" Click="btnLogin_Click"/>
+        Title="Window" Height="700" Width="1000">
+    <Grid Margin="0,1,0,-1">
+        <Grid.Background>
+            <ImageBrush ImageSource="/iniciar-sesion.png"/>
+        </Grid.Background>
+        <Label Content="User" HorizontalAlignment="Left" Margin="345,314,0,0" VerticalAlignment="Top" Height="38" Width="54" FontSize="22" RenderTransformOrigin="0.503,0.491">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.47"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.26"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox HorizontalAlignment="Left" Margin="413,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" Height="39" />
+        <Label Content="Password" HorizontalAlignment="Left" Margin="311,362,0,0" VerticalAlignment="Top" Height="35" Width="103" FontSize="22"/>
+        <TextBox HorizontalAlignment="Left" Margin="414,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" Height="39" />
+        <Button x:Name="btnLogin" Content="Iniciar" HorizontalAlignment="Left" Margin="434,418,0,0" VerticalAlignment="Top" Height="48" Width="123" FontSize="20" Background="Red" Click="btnLogin_Click"/>
+        <Label Content="Login" HorizontalAlignment="Center" Height="76" Margin="0,132,0,0" VerticalAlignment="Top" Width="126" FontSize="48"/>
     </Grid>
 </Window>
