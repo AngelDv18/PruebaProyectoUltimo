@@ -60,6 +60,10 @@ namespace ProyectoFinal23cv.Vistas_WPF
                     usuario.Password = txtPassword.Text;
                     usuario.FkPapel = int.Parse(SelectPapel.SelectedValue.ToString());
 
+                    txtNombre.Clear();
+                    txtUserName.Clear();
+                    txtPassword.Clear();
+
                     services.EditUser(usuario);
 
                     MessageBox.Show("Se editó correctamente");
@@ -89,7 +93,7 @@ namespace ProyectoFinal23cv.Vistas_WPF
             txtNombre.Text = usuario.Nombre.ToString();
             txtUserName.Text = usuario.UserName.ToString();
             txtPassword.Text = usuario.Password.ToString();
-            SelectPapel.SelectedValue = usuario.FkPapel;                 
+            SelectPapel.SelectedValue = usuario.FkPapel;
         }
         private void DeleteItem(object sender, RoutedEventArgs e)
         {
