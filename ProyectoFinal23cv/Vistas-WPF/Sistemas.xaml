@@ -7,16 +7,16 @@
         mc:Ignorable="d"
         Title="Window_Sistem" Height="700" Width="900">
     <Grid Margin="0,0,0,-6">
-        <Label Content="Welcome to the Sistem" HorizontalAlignment="Left" VerticalAlignment="Top" Height="64" Width="551" FontSize="50" Margin="148,10,0,0"/>
-        <Label Content="Number" HorizontalAlignment="Left" Height="38" Margin="18,79,0,0" VerticalAlignment="Top" Width="95" FontSize="20"/>
-        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="44" Margin="18,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"/>
-        <Label Content="User" HorizontalAlignment="Left" Height="47" Margin="18,185,0,0" VerticalAlignment="Top" Width="80" FontSize="20"/>
-        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="37" Margin="18,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"/>
-        <Label Content="Password" HorizontalAlignment="Left" Height="45" Margin="18,286,0,0" VerticalAlignment="Top" Width="95" FontSize="20"/>
-        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="42" Margin="18,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" RenderTransformOrigin="0.499,0.505"/>
-        <Button x:Name="btnAdd" Content="Save" HorizontalAlignment="Left" Height="42" Margin="23,476,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FFFFE700" Click="btnAdd_Click"/>
+        <Label Content="Welcome to the Sistem" HorizontalAlignment="Left" VerticalAlignment="Top" Height="64" Width="551" FontSize="50" Margin="213,10,0,0"/>
+        <Label Content="Number" HorizontalAlignment="Left" Height="38" Margin="31,109,0,0" VerticalAlignment="Top" Width="95" FontSize="20"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="39" Margin="31,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"/>
+        <Label Content="User" HorizontalAlignment="Left" Height="47" Margin="32,211,0,0" VerticalAlignment="Top" Width="80" FontSize="20"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="37" Margin="32,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"/>
+        <Label Content="Password" HorizontalAlignment="Left" Height="45" Margin="32,331,0,0" VerticalAlignment="Top" Width="95" FontSize="20"/>
+        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="42" Margin="32,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" RenderTransformOrigin="0.499,0.505"/>
+        <Button x:Name="btnAdd" Content="Save" HorizontalAlignment="Left" Height="42" Margin="32,538,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FFFFE700" Click="btnAdd_Click"/>
 
-        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="213,136,13,258">
+        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="213,136,13,90">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding PkUsuario}"/>
                 <DataGridTextColumn Header="Number" Binding="{Binding Nombre}"/>
@@ -41,8 +41,8 @@
 
                  
         </DataGrid>
-        <Label Content="Papel" HorizontalAlignment="Left" Height="35" Margin="18,397,0,0" VerticalAlignment="Top" Width="161" FontSize="16"/>
-        <ComboBox x:Name="SelectPapel" DisplayMemberPath="Nombre" SelectedValuePath="PKPapel" HorizontalAlignment="Left" Margin="18,437,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtPkUser" HorizontalAlignment="Left" Height="37" Margin="10,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" IsEnabled="False" FontSize="20"/>
+        <Label Content="Papel" HorizontalAlignment="Left" Height="33" Margin="32,445,0,0" VerticalAlignment="Top" Width="95" FontSize="16"/>
+        <ComboBox x:Name="SelectPapel" DisplayMemberPath="Nombre" SelectedValuePath="PKPapel" HorizontalAlignment="Left" Margin="32,492,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPkUser" HorizontalAlignment="Left" Height="37" Margin="32,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" IsEnabled="False" FontSize="20"/>
     </Grid>
 </Window>

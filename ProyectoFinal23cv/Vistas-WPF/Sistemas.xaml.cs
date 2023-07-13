@@ -103,6 +103,11 @@ namespace ProyectoFinal23cv.Vistas_WPF
             if (result == MessageBoxResult.Yes)
             {
                 services.DeleteUser(usuario);
+                txtNombre.Clear();
+                txtUserName.Clear();
+                txtPassword.Clear();
+                txtPkUser.Clear();
+                SelectPapel.SelectedValue = usuario.FkPapel.Value;
                 MessageBox.Show("Usuario eliminado correctamente.");
                 GetUserTable();
             }
