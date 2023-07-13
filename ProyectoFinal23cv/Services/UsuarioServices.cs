@@ -50,13 +50,13 @@ namespace ProyectoFinal23cv.Services
                 throw new Exception("Error: " + ex.Message);
             }
         }
-            public void DeleteUser(Usuario usuario)
+            public void DeleteUser(Usuario clear)
             {
                  try
                  {
                       using (var _context = new ApplicationDbContext())
                       {
-                        Usuario userToDelete = _context.Usuarios.Find(usuario.PkUsuario);
+                        Usuario userToDelete = _context.Usuarios.Find(clear.PkUsuario);
                            if (userToDelete != null)
                            {
                               _context.Usuarios.Remove(userToDelete);
