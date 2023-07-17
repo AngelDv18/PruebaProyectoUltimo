@@ -2,7 +2,7 @@
 
 namespace ProyectoFinal23cv.Migrations
 {
-    public partial class loli : Migration
+    public partial class casa : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

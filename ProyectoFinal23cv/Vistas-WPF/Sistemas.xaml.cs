@@ -107,10 +107,16 @@ namespace ProyectoFinal23cv.Vistas_WPF
                 txtUserName.Clear();
                 txtPassword.Clear();
                 txtPkUser.Clear();
-                SelectPapel.SelectedValue = usuario.FkPapel.Value;
                 MessageBox.Show("Usuario eliminado correctamente.");
                 GetUserTable();
             }
+        }
+
+        private void return_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow login = new MainWindow();
+            login.Show();
+            Close();
         }
     }
 }

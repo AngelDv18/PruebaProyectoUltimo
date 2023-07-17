@@ -9,7 +9,7 @@ using ProyectoFinal23cv.Context;
 namespace ProyectoFinal23cv.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230712212719_bebe")]
+    [Migration("20230717012509_bebe")]
     partial class bebe
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

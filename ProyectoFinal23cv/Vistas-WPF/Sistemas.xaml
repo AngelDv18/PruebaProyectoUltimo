@@ -15,8 +15,8 @@
         <Label Content="Password" HorizontalAlignment="Left" Height="45" Margin="32,331,0,0" VerticalAlignment="Top" Width="95" FontSize="20"/>
         <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="42" Margin="32,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" RenderTransformOrigin="0.499,0.505"/>
         <Button x:Name="btnAdd" Content="Save" HorizontalAlignment="Left" Height="42" Margin="32,538,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FFFFE700" Click="btnAdd_Click"/>
-
-        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="213,136,13,90">
+        <Button x:Name="return" Content=" 🏠 " HorizontalAlignment="Left" Margin="30,605,0,0" VerticalAlignment="Top" Height="48" Width="68" FontSize="28" Background="Black" Foreground="White" Click="return_Click"/>
+        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="213,136,13,90" FontSize="14" FontWeight="Bold">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding PkUsuario}"/>
                 <DataGridTextColumn Header="Number" Binding="{Binding Nombre}"/>

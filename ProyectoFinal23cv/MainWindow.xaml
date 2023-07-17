@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
         xmlns:local="clr-namespace:ProyectoFinal23cv"
         mc:Ignorable="d"
         Title="Window" Height="700" Width="1000">
@@ -20,10 +21,15 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox HorizontalAlignment="Left" Margin="413,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" Height="39" />
+        <TextBox x:Name="txtUserName" Margin="422,327,384,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" />
         <Label Content="Password" HorizontalAlignment="Left" Margin="311,362,0,0" VerticalAlignment="Top" Height="35" Width="103" FontSize="22"/>
-        <TextBox HorizontalAlignment="Left" Margin="414,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" Height="39" />
-        <Button x:Name="btnLogin" Content="Iniciar" HorizontalAlignment="Left" Margin="434,418,0,0" VerticalAlignment="Top" Height="48" Width="123" FontSize="20" Background="Red" Click="btnLogin_Click"/>
+        <TextBox x:Name="txtPassword"  Margin="423,372,383,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" />
+        
+        <Button x:Name="btnLogin" Content="Iniciar" HorizontalAlignment="Left" Margin="434,418,0,0" VerticalAlignment="Top" Height="48" Width="123" FontSize="20" Background="Aqua" Click="btnLogin_Click" BorderThickness="2,2,2,1"/>
+       
         <Label Content="Login" HorizontalAlignment="Center" Height="76" Margin="0,132,0,0" VerticalAlignment="Top" Width="126" FontSize="48"/>
+      
+
+
     </Grid>
 </Window>

@@ -83,22 +83,38 @@ namespace ProyectoFinal23cv.Services
                 catch (Exception ex)
                 {
                     throw new Exception("Sucedio un error: " + ex.Message);
-                }
+            }
         }
         public List<Papel> GetPapels()
         {
-                try
+            try
+            {
+                using (var _context = new ApplicationDbContext())
                 {
-                    using (var _context = new ApplicationDbContext())
-                    {
-                        List<Papel> papel = _context.Papel.ToList();
-                        return papel;
-                    }
+                    List<Papel> papel = _context.Papel.ToList();
+                    return papel;
                 }
-                catch (Exception ex)
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Sucedio un error " + ex.Message);
+            }
+        }
+        public Usuario Login(string UserName, string Password)
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
                 {
-                    throw new Exception("Sucedio un error " + ex.Message);
+                    var usuario = _context.Usuarios.Include(y => y.Papel).FirstOrDefault(x => x.UserName == UserName && x.Password == Password);
+
+                    return usuario;
                 }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         public Usuario GetUserById(int userId)
         {
