@@ -37,6 +37,7 @@ namespace ProyectoFinal23cv.Vistas_WPF
                 usuario.Nombre = txtNombre.Text;
                 usuario.UserName = txtUserName.Text;
                 usuario.Password = txtPassword.Text;
+                usuario.FechaRegistro = DateTime.Now;
                 usuario.FkPapel = int.Parse(SelectPapel.SelectedValue.ToString());
 
                 services.AddUser(usuario);
@@ -58,11 +59,13 @@ namespace ProyectoFinal23cv.Vistas_WPF
                     usuario.Nombre = txtNombre.Text;
                     usuario.UserName = txtUserName.Text;
                     usuario.Password = txtPassword.Text;
+                    usuario.FechaRegistro= DateTime.Now;
                     usuario.FkPapel = int.Parse(SelectPapel.SelectedValue.ToString());
 
                     txtNombre.Clear();
                     txtUserName.Clear();
                     txtPassword.Clear();
+                    txtFechaRegistro.Clear();
 
                     services.EditUser(usuario);
 
@@ -93,6 +96,7 @@ namespace ProyectoFinal23cv.Vistas_WPF
             txtNombre.Text = usuario.Nombre.ToString();
             txtUserName.Text = usuario.UserName.ToString();
             txtPassword.Text = usuario.Password.ToString();
+            txtFechaRegistro.Text = usuario.FechaRegistro.ToString();
             SelectPapel.SelectedValue = usuario.FkPapel;
         }
         private void DeleteItem(object sender, RoutedEventArgs e)
@@ -107,12 +111,12 @@ namespace ProyectoFinal23cv.Vistas_WPF
                 txtUserName.Clear();
                 txtPassword.Clear();
                 txtPkUser.Clear();
+                txtFechaRegistro.Clear();
                 MessageBox.Show("Usuario eliminado correctamente.");
                 GetUserTable();
             }
         }
-
-        private void return_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow login = new MainWindow();
             login.Show();

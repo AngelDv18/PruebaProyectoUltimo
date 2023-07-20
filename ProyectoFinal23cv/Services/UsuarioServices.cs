@@ -23,6 +23,7 @@ namespace ProyectoFinal23cv.Services
                         pollo.Nombre = request.Nombre;
                         pollo.UserName = request.UserName;
                         pollo.Password = request.Password;
+                        pollo.FechaRegistro = DateTime.Now;
                         /*pollo.pkrol = request.fkrol*/
                         pollo.FkPapel = request.FkPapel;
                         _context.Usuarios.Add(pollo);

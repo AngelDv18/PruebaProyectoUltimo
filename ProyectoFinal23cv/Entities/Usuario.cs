@@ -15,6 +15,7 @@ namespace ProyectoFinal23cv.Entities
         public string Nombre { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
+        public DateTime FechaRegistro { get; set; }
 
         [ForeignKey("Papel")]
         public int? FkPapel { get; set; }

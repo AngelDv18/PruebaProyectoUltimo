@@ -1,0 +1,17 @@
+﻿<Window x:Class="ProyectoFinal23cv.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoFinal23cv"
+        mc:Ignorable="d"
+        Title="Menu" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="txtAlumnno" Content="Alumno" HorizontalAlignment="Center" Height="86" Margin="0,38,0,0" VerticalAlignment="Top" Width="266" Click="txtAlumnno_Click"/>
+        <Button x:Name="txtMaestro" Content="Maestro" HorizontalAlignment="Left" Height="52" Margin="267,144,0,0" VerticalAlignment="Top" Width="257" Click="txtMaestro_Click"/>
+        <Button x:Name="txtGrupo" Content="Grupo" HorizontalAlignment="Left" Height="48" Margin="242,283,0,0" VerticalAlignment="Top" Width="307" Click="txtGrupo_Click"/>
+        <Button x:Name="txtAdmin" Content="Abmin" HorizontalAlignment="Left" Height="49" Margin="300,355,0,0" VerticalAlignment="Top" Width="192" RenderTransformOrigin="0.512,0.547" Click="txtAdmin_Click"/>
+        <Button x:Name="txtCarrera"  Content="Carrera" HorizontalAlignment="Left" Height="61" Margin="267,211,0,0" VerticalAlignment="Top" Width="257" Click="txtCarrera_Click"/>
+
+    </Grid>
+</Window>

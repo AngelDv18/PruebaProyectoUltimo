@@ -15,18 +15,17 @@ using System.Windows.Shapes;
 namespace ProyectoFinal23cv.Vistas_WPF
 {
     /// <summary>
-    /// Lógica de interacción para SistemaCopia.xaml
+    /// Lógica de interacción para Grupo.xaml
     /// </summary>
-    public partial class SistemaCopia : Window
+    public partial class Grupo : Window
     {
-        public SistemaCopia()
+        public Grupo()
         {
             InitializeComponent();
         }
-
-        private void return_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-             MainWindow login = new MainWindow();
+            MainWindow login = new MainWindow();
             login.Show();
             Close();
         }

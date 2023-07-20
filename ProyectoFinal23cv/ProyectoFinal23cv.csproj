@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="iniciar-sesion.png" />
+    <None Remove="Vistas-WPF\Return.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +24,7 @@
 
   <ItemGroup>
     <Resource Include="iniciar-sesion.png" />
+    <Resource Include="Vistas-WPF\Return.png" />
   </ItemGroup>
 
 </Project>
