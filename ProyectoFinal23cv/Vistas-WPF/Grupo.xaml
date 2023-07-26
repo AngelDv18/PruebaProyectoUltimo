@@ -5,9 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal23cv.Vistas_WPF"
         mc:Ignorable="d"
-        Title="Grupo" Height="450" Width="800">
+        Title="Grupo" Height="750" Width="900">
     <Grid>
-
+        <Label Content="NomberGroup" HorizontalAlignment="Left" Height="38" Margin="24,225,0,0" VerticalAlignment="Top" Width="139" FontSize="20"/>
+        <TextBox x:Name="txtNombreGrupo" HorizontalAlignment="Left" Height="39" Margin="31,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"/>
+        <Button x:Name="btnAdd" Content="Save" HorizontalAlignment="Left" Height="42" Margin="31,600,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FFFFE700" />
+        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="213,136,13,90" FontSize="14" FontWeight="Bold">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                <DataGridTextColumn Header="NomberGroup" Binding="{Binding NombreGrupo}"/>
+                <DataGridTextColumn Header="Papel" Binding="{Binding Papel.Nombre}"/>
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edit"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
         <Button Content="" HorizontalAlignment="Left" Height="31" Margin="8,2,0,0" VerticalAlignment="Top" Width="51" BorderBrush="#FFF7F7F7" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Vistas-WPF/Return.png"/>

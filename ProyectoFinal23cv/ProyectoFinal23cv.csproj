@@ -8,7 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="admins.png" />
+    <None Remove="carrera.jpeg" />
+    <None Remove="esconder.png" />
+    <None Remove="graduates.png" />
     <None Remove="iniciar-sesion.png" />
+    <None Remove="Master.jpeg" />
+    <None Remove="people.png" />
+    <None Remove="resurt.jpeg" />
+    <None Remove="show.png" />
+    <None Remove="Vistas-WPF\Admi.jpg" />
     <None Remove="Vistas-WPF\Return.png" />
   </ItemGroup>
 
@@ -23,7 +32,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="admins.png" />
+    <Resource Include="carrera.jpeg" />
+    <Resource Include="esconder.png" />
+    <Resource Include="graduates.png" />
     <Resource Include="iniciar-sesion.png" />
+    <Resource Include="Master.jpeg" />
+    <Resource Include="people.png" />
+    <Resource Include="resurt.jpeg" />
+    <Resource Include="show.png" />
+    <Resource Include="Vistas-WPF\Admi.jpg" />
     <Resource Include="Vistas-WPF\Return.png" />
   </ItemGroup>
 

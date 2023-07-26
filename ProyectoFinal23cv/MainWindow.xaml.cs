@@ -27,14 +27,19 @@ namespace ProyectoFinal23cv
     /// </summary>
     public partial class MainWindow : Window
     {
-    
+
         public MainWindow()
         {
             InitializeComponent();
         }
         UsuarioServices services = new UsuarioServices();
-          //   <Label Content="Password" HorizontalAlignment="Left" Margin="311,362,0,0" VerticalAlignment="Top" Height="35" Width="103" FontSize="22"/>
-            //  < TextBox x: Name = "txtPasword"  Margin = "423,372,383,0" TextWrapping = "Wrap" VerticalAlignment = "Top" Height = "32" /> 
+        // <StackPanel Orientation = "Horizontal" Margin="565,331,159,331" AutomationProperties.Name="Text" Background="#FFE2E2E2">
+        //  <materialDesign:PackIcon Kind = "Lock" Width="33" Height="33" Foreground="Black"/>
+        //   <PasswordBox x:Name="txtPassword" materialDesign:HintAssist.Hint=" " Foreground="Black" Width="244" BorderBrush="Black" CaretBrush="#FFD94448" SelectionBrush="#FFD94448" Height="36" />
+        //    </StackPanel>
+
+
+        //  < TextBox x: Name = "txtPasword"  Margin = "423,372,383,0" TextWrapping = "Wrap" VerticalAlignment = "Top" Height = "32" /> 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             #region---login---
@@ -79,40 +84,68 @@ namespace ProyectoFinal23cv
                 }
             }
         }
-        #region
-        //private void btnRegister_Click(object sender, RoutedEventArgs e)
-        //{
-
-        //        //string username = User.Text;
-        //        //string password = Password.Text;
-        //        //// Obtener los valores de las propiedades adicionales          
-        //        //using (var dbContext = new ApplicationDbContext())
-        //        //{
-        //        //    bool userExists = dbContext.Usuarios.Any(u => u.UserName == username);
-
-        //        //    if (userExists)
-        //        //    {
-        //        //        MessageBox.Show("El usuario ya existe. Por favor, elija un nombre de usuario diferente.", "Registro Fallido", MessageBoxButton.OK, MessageBoxImage.Error);
-        //        //    }
-        //        //    else
-        //        //    {
-        //        //        var registerUser = new Usuario
-        //        //        {
-        //        //            Nombre = username,
-        //        //            UserName = username,
-        //        //            Password = password,
-        //        //        };
-        //        //        dbContext.Usuarios.Add(registerUser);
-        //        //        dbContext.SaveChanges();
-        //        //        MessageBox.Show("Registro exitoso. Ahora puede iniciar sesión.", "Registro Exitoso", MessageBoxButton.OK, MessageBoxImage.Information);
-        //        //        btnLogin_Click(sender, e);
-        //        //    }
-        //        //}
-        //    }
-        #endregion
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
-    }
+        private void btnMinimized_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+        private string passwordTemp;
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            // Mostrar contraseña
+            passwordTemp = txtPassword.Password;
+            txtPassword.Visibility = Visibility.Collapsed;
+
+            txtTempPassword.Text = passwordTemp;
+            txtTempPassword.Visibility = Visibility.Visible;
+        }
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            // Ocultar contraseña
+            passwordTemp = txtTempPassword.Text;
+            txtTempPassword.Visibility = Visibility.Collapsed;
+
+            txtPassword.Password = passwordTemp;
+            txtPassword.Visibility = Visibility.Visible;
+        }
+    } 
 }
+
+#region
+//private void btnRegister_Click(object sender, RoutedEventArgs e)
+//{
+
+//        //string username = User.Text;
+//        //string password = Password.Text;
+//        //// Obtener los valores de las propiedades adicionales          
+//        //using (var dbContext = new ApplicationDbContext())
+//        //{
+//        //    bool userExists = dbContext.Usuarios.Any(u => u.UserName == username);
+
+//        //    if (userExists)
+//        //    {
+//        //        MessageBox.Show("El usuario ya existe. Por favor, elija un nombre de usuario diferente.", "Registro Fallido", MessageBoxButton.OK, MessageBoxImage.Error);
+//        //    }
+//        //    else
+//        //    {
+//        //        var registerUser = new Usuario
+//        //        {
+//        //            Nombre = username,
+//        //            UserName = username,
+//        //            Password = password,
+//        //        };
+//        //        dbContext.Usuarios.Add(registerUser);
+//        //        dbContext.SaveChanges();
+//        //        MessageBox.Show("Registro exitoso. Ahora puede iniciar sesión.", "Registro Exitoso", MessageBoxButton.OK, MessageBoxImage.Information);
+//        //        btnLogin_Click(sender, e);
+//        //    }
+//        //}
+//    }
+#endregion

@@ -29,5 +29,10 @@ namespace ProyectoFinal23cv.Vistas_WPF
             login.Show();
             Close();
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

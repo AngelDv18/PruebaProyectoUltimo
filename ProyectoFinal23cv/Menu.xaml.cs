@@ -24,14 +24,12 @@ namespace ProyectoFinal23cv
         {
             InitializeComponent();
         }
-
         private void txtAlumnno_Click(object sender, RoutedEventArgs e)
         {
             Alumno alumno = new Alumno();
             alumno.Show();
             Close();
         }
-
         private void txtMaestro_Click(object sender, RoutedEventArgs e)
         {
             Maestros maestros = new Maestros();
@@ -44,14 +42,12 @@ namespace ProyectoFinal23cv
             carrera.Show();
             Close();
         }
-
         private void txtGrupo_Click(object sender, RoutedEventArgs e)
         {
             Grupo grupo = new Grupo();
             grupo.Show();
             Close();
         }
-
         private void txtAdmin_Click(object sender, RoutedEventArgs e)
         {
             Sistemas sistemas = new Sistemas();

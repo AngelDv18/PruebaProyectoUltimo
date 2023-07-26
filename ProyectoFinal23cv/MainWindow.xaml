@@ -4,24 +4,35 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
         xmlns:local="clr-namespace:ProyectoFinal23cv" 
+        xmlns:system="clr-namespace:System;assembly=System.Runtime"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="LOGIN" Height="700" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
-    <Grid Margin="0,1,0,-1">
+    <Grid Margin="0,1,0,-1" MouseDown="Border_MouseDown">
         <Grid.Background>
-            <ImageBrush ImageSource="/iniciar-sesion.png"/>
+            <ImageBrush ImageSource="/resurt.jpeg"/>
         </Grid.Background>
-        <materialDesign:PackIcon Kind="User" Width="36" Height="27" Foreground="Black" Margin="390,344,0,0"/>
-        <TextBox x:Name="txtUserName" Margin="431,340,387,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" />
-        <StackPanel Orientation="Horizontal" Margin="395,392,380,277" AutomationProperties.Name="Text">
-            <materialDesign:PackIcon Kind="Lock" Width="35" Height="27" Foreground="Black"/>
-            <PasswordBox x:Name="txtPassword" materialDesign:HintAssist.Hint="********" Foreground="Black" Width="184" BorderBrush="Black" CaretBrush="#FFD94448" SelectionBrush="#FFD94448" Height="24" />
-        </StackPanel>
-        <Button x:Name="btnLogin" Content="Iniciar" HorizontalAlignment="Left" Margin="437,436,0,0" VerticalAlignment="Top" Height="48" Width="123" FontSize="20" Background="Aqua" Click="btnLogin_Click" BorderThickness="2,2,2,1"/>
-        <Label Content="Login" HorizontalAlignment="Center" Height="76" Margin="0,132,0,0" VerticalAlignment="Top" Width="126" FontSize="48"/>
-        <Button Margin="934,10,10,634" Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{x:Null}"
-                 ToolTip="Close" x:Name="btnExit" Click="btnExit_Click">
-            <materialDesign:PackIcon Kind="Close" Foreground="Black" Width="30" Height="30" />
+        <Grid.Resources>
+            <system:Boolean x:Key="IsPasswordVisible">False</system:Boolean>
+        </Grid.Resources>
+        <Border Height="556" VerticalAlignment="Top" CornerRadius="0 0 180 0" MouseDown="Border_MouseDown" Margin="0,91,510,0"/>
+        <materialDesign:PackIcon Kind="User" Width="36" Height="46" Foreground="BlueViolet" Margin="565,252,0,0"/>
+        <TextBox x:Name="txtUserName" Margin="601,256,159,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Background="#FFEBEBEB" FontSize="18" BorderBrush="#FF5D00F9" Foreground="Black" SelectionBrush="#FF5D00F9" CaretBrush="#FF5D00F9" />
+        <Button x:Name="btnLogin" Content=" " HorizontalAlignment="Left" Margin="562,420,0,0" VerticalAlignment="Top" Height="48" Width="302" FontSize="20" Background="{x:Null}" Click="btnLogin_Click" BorderThickness="2,2,2,1" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+        <Button Margin="945,0,-1,644" Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{x:Null}"
+                 ToolTip="Close" x:Name="btnExit" Click="btnExit_Click" BorderBrush="{x:Null}">
+            <materialDesign:PackIcon Kind="CloseBoxMultipleOutline" Foreground="Black" Width="26" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Button>
+        <StackPanel Orientation="Horizontal" Margin="572,321,157,331" AutomationProperties.Name="Text" Background="#FFDDDDDD">
+            <materialDesign:PackIcon Kind="Lock" Width="33" Height="44" Foreground="BlueViolet" />
+            <PasswordBox x:Name="txtPassword" materialDesign:HintAssist.Hint=" " Foreground="Black" Width="244" BorderBrush="BlueViolet" CaretBrush="BlueViolet" SelectionBrush="BlueViolet" FontSize="20" Height="38" PasswordChar="●" />
+            <TextBox x:Name="txtTempPassword" materialDesign:HintAssist.Hint=" " Foreground="Black" Width="244" BorderBrush="BlueViolet" CaretBrush="BlueViolet" SelectionBrush="BlueViolet" FontSize="20" Height="36" Visibility="Collapsed" />
+        </StackPanel>
+        <CheckBox Content=" " IsChecked="{StaticResource IsPasswordVisible}" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Margin="572,384,345,292" BorderBrush="BlueViolet" Foreground="BlueViolet" Background="BlueViolet"/>
+        <Button Margin="817,0,127,644" Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{x:Null}"
+            ToolTip="Minimized" x:Name="btnMinimized" BorderBrush="{x:Null}" Click="btnMinimized_Click">
+            <materialDesign:PackIcon Kind="Minimize" Foreground="White" Width="40" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Button>
+        <Label Content="" HorizontalAlignment="Left" Height="18" Margin="758,390,0,0" VerticalAlignment="Top" Width="100" Background="White"/>
     </Grid>
 </Window>

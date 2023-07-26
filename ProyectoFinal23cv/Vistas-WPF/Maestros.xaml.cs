@@ -1,4 +1,6 @@
-﻿using Org.BouncyCastle.Crypto.Tls;
+﻿using Microsoft.EntityFrameworkCore;
+using ProyectoFinal23cv.Entities;
+using ProyectoFinal23cv.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,12 +26,16 @@ namespace ProyectoFinal23cv.Vistas_WPF
         {
             InitializeComponent();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow login = new MainWindow();
             login.Show();
             Close();
+        }
+
+        private void btnAddMaestro_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

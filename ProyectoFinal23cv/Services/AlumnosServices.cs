@@ -9,24 +9,25 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal23cv.Services
 {
-    public class UsuarioServices
+    class AlumnosServices
     {
-        public void AddUser(Usuario request)
+        public void AddAlumn(Alumnos requet)
         {
             try
             {
-                if (request != null)
+                if (requet != null)
                 {
                     using (var _context = new ApplicationDbContext())
                     {
-                        Usuario pollo = new Usuario();
-                        pollo.Nombre = request.Nombre;
-                        pollo.UserName = request.UserName;
-                        pollo.Password = request.Password;
-                        pollo.FechaRegistro = DateTime.Now;
-                        /*pollo.pkrol = request.fkrol*/
-                        pollo.FkPapel = request.FkPapel;
-                        _context.Usuarios.Add(pollo);
+                        Alumnos alum = new Alumnos();
+                        
+                        alum.NombreAlumno = requet.NombreAlumno;
+                        alum.ApellidoP = requet.ApellidoP;
+                        alum.ApellidoM = requet.ApellidoM;
+                        alum.Fechaqueregistro = requet.Fechaqueregistro;
+                        alum.FkPapel = requet.FkPapel;
+
+                        _context.Alumnos.Add(alum);
                         _context.SaveChanges();
                     }
                 }
@@ -36,49 +37,49 @@ namespace ProyectoFinal23cv.Services
                 throw new Exception("Error: " + ex.Message);
             }
         }
-        public void EditUser(Usuario usuario)
+        public void EditAlumn(Alumnos alum)
         {
             try
             {
                 using (var _context = new ApplicationDbContext())
                 {
-                    _context.Entry(usuario).State = EntityState.Modified;
+                    _context.Entry(alum).State = EntityState.Modified;
                     _context.SaveChanges();
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Error: " + ex.Message);
+                throw new Exception("Error al Editar Alumno: " + ex.Message);
             }
         }
-        public void DeleteUser(Usuario clear)
+        public void DeletAlus(Alumnos cleam)
         {
             try
             {
                 using (var _context = new ApplicationDbContext())
                 {
-                    Usuario userToDelete = _context.Usuarios.Find(clear.PkUsuario);
-                    if (userToDelete != null)
+                    Alumnos AluToDelete = _context.Alumnos.Find(cleam.PkAlumno);
+                    if (AluToDelete != null)
                     {
-                        _context.Usuarios.Remove(userToDelete);
+                        _context.Alumnos.Remove(AluToDelete);
                         _context.SaveChanges();
                     }
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al eliminar el usuario: " + ex.Message);
+                throw new Exception("Error al eliminar el Alumno: " + ex.Message);
             }
         }
-        public List<Usuario> GetUsers()
+        public List<Alumnos> GetAlumn()
         {
             try
             {
                 using (var _context = new ApplicationDbContext())
                 {
-                    List<Usuario> usuarios = new List<Usuario>();
-                    usuarios = _context.Usuarios.Include(x => x.Papel).ToList();
-                    return usuarios;
+                    List<Alumnos> Alu = new List<Alumnos>();
+                    Alu = _context.Alumnos.Include(x => x.Papel).ToList();
+                    return Alu;
                 }
             }
             catch (Exception ex)
@@ -86,7 +87,7 @@ namespace ProyectoFinal23cv.Services
                 throw new Exception("Sucedio un error: " + ex.Message);
             }
         }
-        public List<Papel> GetPapels()
+        public List<Papel> GetPapeles()
         {
             try
             {
@@ -101,30 +102,14 @@ namespace ProyectoFinal23cv.Services
                 throw new Exception("Sucedio un error " + ex.Message);
             }
         }
-        public Usuario Login(string UserName, string Password)
+        public Alumnos GetUserByIdAlu(int alutId)
         {
             try
             {
                 using (var _context = new ApplicationDbContext())
                 {
-                    var usuario = _context.Usuarios.Include(y => y.Papel).FirstOrDefault(x => x.UserName == UserName && x.Password == Password);
-
-                    return usuario;
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        public Usuario GetUserById(int userId)
-        {
-            try
-            {
-                using (var _context = new ApplicationDbContext())
-                {
-                    Usuario usuario = _context.Usuarios.FirstOrDefault(u => u.PkUsuario == userId);
-                    return usuario;
+                    Alumnos alu = _context.Alumnos.FirstOrDefault(u => u.PkAlumno == alutId);
+                    return alu;
                 }
             }
             catch (Exception ex)
@@ -132,5 +117,5 @@ namespace ProyectoFinal23cv.Services
                 throw new Exception("Sucedio un error: " + ex.Message);
             }
         }
-    }  
+    }
 }
