@@ -9,7 +9,7 @@ using ProyectoFinal23cv.Context;
 namespace ProyectoFinal23cv.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230725225138_hola")]
+    [Migration("20230726213716_hola")]
     partial class hola
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -94,11 +94,17 @@ namespace ProyectoFinal23cv.Migrations
                     b.Property<DateTime>("FechasRegistrada")
                         .HasColumnType("datetime");
 
+                    b.Property<int?>("FkPapel")
+                        .IsRequired()
+                        .HasColumnType("int");
+
                     b.Property<string>("NombreMaestros")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("PkMaestros");
+
+                    b.HasIndex("FkPapel");
 
                     b.ToTable("Maestros");
                 });
@@ -150,6 +156,17 @@ namespace ProyectoFinal23cv.Migrations
                 });
 
             modelBuilder.Entity("ProyectoFinal23cv.Entities.Alumnos", b =>
+                {
+                    b.HasOne("ProyectoFinal23cv.Entities.Papel", "Papel")
+                        .WithMany()
+                        .HasForeignKey("FkPapel")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Papel");
+                });
+
+            modelBuilder.Entity("ProyectoFinal23cv.Entities.Maestros", b =>
                 {
                     b.HasOne("ProyectoFinal23cv.Entities.Papel", "Papel")
                         .WithMany()

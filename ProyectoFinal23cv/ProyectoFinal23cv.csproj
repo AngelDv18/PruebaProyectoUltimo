@@ -18,6 +18,8 @@
     <None Remove="resurt.jpeg" />
     <None Remove="show.png" />
     <None Remove="Vistas-WPF\Admi.jpg" />
+    <None Remove="Vistas-WPF\apagado.jpg" />
+    <None Remove="Vistas-WPF\cierre.jpeg" />
     <None Remove="Vistas-WPF\Return.png" />
   </ItemGroup>
 
@@ -42,6 +44,8 @@
     <Resource Include="resurt.jpeg" />
     <Resource Include="show.png" />
     <Resource Include="Vistas-WPF\Admi.jpg" />
+    <Resource Include="Vistas-WPF\apagado.jpg" />
+    <Resource Include="Vistas-WPF\cierre.jpeg" />
     <Resource Include="Vistas-WPF\Return.png" />
   </ItemGroup>
 

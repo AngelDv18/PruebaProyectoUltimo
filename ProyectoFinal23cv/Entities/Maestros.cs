@@ -12,11 +12,13 @@ namespace ProyectoFinal23cv.Entities
     public class Maestros
     {
         [Key]
-    public int PkMaestros { get; set; }
+        public int PkMaestros { get; set; }
         public string NombreMaestros { get; set; }
         public string Especialidad { get; set; }
         public DateTime FechasRegistrada { get; set; }
 
-
+        [ForeignKey("Papel")]
+        public int? FkPapel { get; set; }
+        public Papel Papel { get; set; }
     }
 }

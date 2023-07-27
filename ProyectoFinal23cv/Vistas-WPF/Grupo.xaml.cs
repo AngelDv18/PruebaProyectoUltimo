@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,12 @@ namespace ProyectoFinal23cv.Vistas_WPF
             InitializeComponent();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.Show();
+            Close();
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             MainWindow login = new MainWindow();
             login.Show();

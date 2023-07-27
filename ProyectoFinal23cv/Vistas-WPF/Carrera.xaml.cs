@@ -25,14 +25,15 @@ namespace ProyectoFinal23cv.Vistas_WPF
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Menu menu = new Menu();
+            menu.Show();
+            Close();
+        }
+        private void btnCarrera_Click(object sender, RoutedEventArgs e)
+        {
             MainWindow login = new MainWindow();
             login.Show();
             Close();
-        }
-
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

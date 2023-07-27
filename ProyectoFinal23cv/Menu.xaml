@@ -18,32 +18,32 @@
                 <GradientStop Color="#FF424242" Offset="0.953"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button x:Name="txtAlumnno" Content="Alumnos" HorizontalAlignment="Left" Height="86" Margin="188,158,0,0" VerticalAlignment="Top" Width="122" Click="txtAlumnno_Click" BorderBrush="{x:Null}" FontSize="22" Foreground="#DD007DFF">
+        <Button x:Name="txtAlumnno" Content="Alumnos" HorizontalAlignment="Left" Height="86" Margin="188,158,0,0" VerticalAlignment="Top" Width="122" Click="txtAlumnno_Click" BorderBrush="White" FontSize="22" Foreground="#DDFFFFFF">
             <Button.Background>
                 <ImageBrush ImageSource="/graduates.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="txtMaestro" Content="Maestros" HorizontalAlignment="Left" Height="87" Margin="332,157,0,0" VerticalAlignment="Top" Width="122" Click="txtMaestro_Click" BorderBrush="{x:Null}" FontWeight="Bold" FontFamily="Onyx" FontSize="36" Foreground="Black">
+        <Button x:Name="txtMaestro" Content="Maestros" HorizontalAlignment="Left" Height="87" Margin="332,157,0,0" VerticalAlignment="Top" Width="122" Click="txtMaestro_Click" BorderBrush="Black" FontWeight="Bold" FontFamily="Onyx" FontSize="36" Foreground="Black">
             <Button.Background>
                 <ImageBrush ImageSource="/Master.jpeg" Stretch="Fill" TileMode="None"/>
             </Button.Background>
         </Button>
-        <Button x:Name="txtGrupo" Content="Grupo" HorizontalAlignment="Left" Height="84" Margin="633,158,0,0" VerticalAlignment="Top" Width="122" Click="txtGrupo_Click" BorderBrush="{x:Null}" Foreground="#DD020202" FontSize="24">
+        <Button x:Name="txtGrupo" Content="Grupo" HorizontalAlignment="Left" Height="84" Margin="633,158,0,0" VerticalAlignment="Top" Width="122" Click="txtGrupo_Click" BorderBrush="#FF0AF6FF" Foreground="#FF00F6FF" FontSize="24" FontFamily="Bernard MT Condensed" FontWeight="Bold">
             <Button.Background>
                 <ImageBrush ImageSource="/people.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="txtAdmin" Content=" " HorizontalAlignment="Left" Height="85" Margin="42,157,0,0" VerticalAlignment="Top" Width="122" RenderTransformOrigin="0.512,0.547" Click="txtAdmin_Click" BorderBrush="{x:Null}">
+        <Button x:Name="txtAdmin" Content=" " HorizontalAlignment="Left" Height="85" Margin="42,157,0,0" VerticalAlignment="Top" Width="122" RenderTransformOrigin="0.512,0.547" Click="txtAdmin_Click" BorderBrush="#FF003DFF">
             <Button.Background>
                 <ImageBrush ImageSource="/admins.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="txtCarrera"  Content="Carrera" HorizontalAlignment="Left" Height="87" Margin="485,158,0,0" VerticalAlignment="Top" Width="122" Click="txtCarrera_Click" BorderBrush="{x:Null}" FontSize="18" FontFamily="Lucida Handwriting">
+        <Button x:Name="txtCarrera"  Content="Carrera" HorizontalAlignment="Left" Height="87" Margin="485,158,0,0" VerticalAlignment="Top" Width="122" Click="txtCarrera_Click" BorderBrush="White" FontSize="18" FontFamily="Lucida Handwriting">
             <Button.Background>
                 <ImageBrush ImageSource="/carrera.jpeg"/>
             </Button.Background>
         </Button>
-        <Label Content="SIGIE" HorizontalAlignment="Center" Height="105" Margin="0,10,0,0" VerticalAlignment="Top" Width="236" FontSize="90" FontFamily="Monotype Corsiva" FontStyle="Oblique" FontWeight="Regular" Foreground="#DDFFFFFF"/>
+        <Label Content="SIGIE" HorizontalAlignment="Center" Height="117" Margin="0,10,0,0" VerticalAlignment="Top" Width="264" FontSize="100" FontFamily="Monotype Corsiva" FontStyle="Oblique" FontWeight="Regular" Foreground="#DDFFFFFF"/>
         <Label Content="" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="800" Background="Red"/>
         <Label Content="" HorizontalAlignment="Center" Height="36" Margin="0,398,0,0" VerticalAlignment="Top" Width="800" Background="Red"/>
 

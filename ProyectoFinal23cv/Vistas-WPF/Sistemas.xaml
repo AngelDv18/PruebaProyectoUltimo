@@ -18,10 +18,10 @@
         <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="37" Margin="32,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"/>
         <Label Content="Password" HorizontalAlignment="Left" Height="45" Margin="32,279,0,0" VerticalAlignment="Top" Width="95" FontSize="20"/>
         <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="42" Margin="32,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" RenderTransformOrigin="0.499,0.505"/>
-        <Label Content="FechaRegistro" HorizontalAlignment="Left" Height="42" Margin="30,376,0,0" VerticalAlignment="Top" Width="134" FontSize="20"/>
-        <TextBox x:Name="txtFechaRegistro" HorizontalAlignment="Left" Height="46" Margin="30,418,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" FontSize="16" IsEnabled="False"/>
-        <Button x:Name="btnAdd" Content="Save" HorizontalAlignment="Left" Height="42" Margin="32,606,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FFFFE700" Click="btnAdd_Click"/>
-        <Button Content="" HorizontalAlignment="Left" Height="31" Margin="8,2,0,0" VerticalAlignment="Top" Width="51" BorderBrush="#FFF7F7F7" Click="Button_Click">
+        <Label Content="FechaRegistro" HorizontalAlignment="Left" Height="42" Margin="30,372,0,0" VerticalAlignment="Top" Width="134" FontSize="20"/>
+        <TextBox x:Name="txtFechaRegistro" HorizontalAlignment="Left" Height="39" Margin="10,418,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontSize="14" IsEnabled="False"/>
+        <Button x:Name="btnAdd" Content="Save" HorizontalAlignment="Left" Height="42" Margin="32,606,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FFFF7800" Click="btnAdd_Click" BorderBrush="White"/>
+        <Button Content="" HorizontalAlignment="Left" Height="26" Margin="3,2,0,0" VerticalAlignment="Top" Width="25" BorderBrush="#FFF7F7F7" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Vistas-WPF/Return.png"/>
             </Button.Background>
@@ -37,14 +37,14 @@
                 <DataGridTemplateColumn Header="Edit">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Edit" Click="EditItem"/>
+                            <Button Content="Edit" Click="EditItem" Background="Black" BorderBrush="#FFF32121"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Delete">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Delete" Click="DeleteItem"/>
+                            <Button Content="Delete" Click="DeleteItem" Background="Red" BorderBrush="Black"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -54,7 +54,7 @@
         </DataGrid>
         <Label Content="Papel" HorizontalAlignment="Left" Height="33" Margin="32,493,0,0" VerticalAlignment="Top" Width="95" FontSize="16"/>
         <ComboBox x:Name="SelectPapel" DisplayMemberPath="Nombre" SelectedValuePath="PKPapel" HorizontalAlignment="Left" Margin="32,556,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtPkUser" HorizontalAlignment="Left" Height="37" Margin="159,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" IsEnabled="False" FontSize="20"/>
+        <TextBox x:Name="txtPkUser" HorizontalAlignment="Left" Height="37" Margin="159,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" IsEnabled="False" FontSize="20" BorderBrush="{x:Null}" CaretBrush="{x:Null}" Foreground="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" Background="{x:Null}"/>
 
 
     </Grid>

@@ -32,7 +32,7 @@ namespace ProyectoFinal23cv
         }
         private void txtMaestro_Click(object sender, RoutedEventArgs e)
         {
-            Maestros maestros = new Maestros();
+            Master maestros = new Master();
             maestros.Show();
             Close();
         }

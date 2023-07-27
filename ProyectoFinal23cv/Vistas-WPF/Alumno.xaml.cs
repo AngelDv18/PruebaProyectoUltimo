@@ -30,8 +30,8 @@ namespace ProyectoFinal23cv.Vistas_WPF
         AlumnosServices servis = new AlumnosServices();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow login = new MainWindow();
-            login.Show();
+            Menu menu = new Menu();
+            menu.Show();
             Close();
         }
         private void btnAddAlumno_Click(object sender, RoutedEventArgs e)
@@ -111,7 +111,7 @@ namespace ProyectoFinal23cv.Vistas_WPF
         private void DeleteItemAlus_Click(object sender, RoutedEventArgs e)
         {
             Alumnos alumnos = (sender as FrameworkElement).DataContext as Alumnos;
-            MessageBoxResult resulta = MessageBox.Show("¿Estás seguro de que quieres eliminar este alumno?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult resulta = MessageBox.Show("¿Estás seguro de que quieres eliminar este Alumno?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             if (resulta == MessageBoxResult.Yes)
             {
@@ -124,6 +124,13 @@ namespace ProyectoFinal23cv.Vistas_WPF
                 MessageBox.Show("Alumno eliminado correctamente.");
                 GetUserTableAlu();
             }
+        }
+
+        private void Cerrarcesion_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow CS = new MainWindow();
+            CS.Show();
+            Close();
         }
     }
 }
