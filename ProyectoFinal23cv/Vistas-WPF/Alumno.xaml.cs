@@ -99,6 +99,7 @@ namespace ProyectoFinal23cv.Vistas_WPF
         private void EditItemAlu_Click(object sender, RoutedEventArgs e)
         {
             Alumnos alumnose = new Alumnos();
+            
             alumnose = (sender as FrameworkElement).DataContext as Alumnos;  //Esta funcion trae la seccion de la fila
 
             txtPkAlumno.Text = alumnose.PkAlumno.ToString();
@@ -110,6 +111,7 @@ namespace ProyectoFinal23cv.Vistas_WPF
         }
         private void DeleteItemAlus_Click(object sender, RoutedEventArgs e)
         {
+            //esto sirve para eliminar los datos tanto en la base de datos como en la tabla
             Alumnos alumnos = (sender as FrameworkElement).DataContext as Alumnos;
             MessageBoxResult resulta = MessageBox.Show("¿Estás seguro de que quieres eliminar este Alumno?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
@@ -128,6 +130,9 @@ namespace ProyectoFinal23cv.Vistas_WPF
 
         private void Cerrarcesion_Click(object sender, RoutedEventArgs e)
         {
+            {
+                MessageBox.Show("Sesión Cerrada");
+            }
             MainWindow CS = new MainWindow();
             CS.Show();
             Close();

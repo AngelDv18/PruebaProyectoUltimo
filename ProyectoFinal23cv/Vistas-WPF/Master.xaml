@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal23cv.Vistas_WPF"
         mc:Ignorable="d"
-        Title="Master" Height="650" Width="1185">
+        Title="Master" Height="660" Width="1203">
     <Grid>
         <Grid.Background>
             <RadialGradientBrush>
@@ -16,28 +16,28 @@
                 <GradientStop Color="#FF2D2222" Offset="0.723"/>
             </RadialGradientBrush>
         </Grid.Background>
-        <Label Content="Welcome Master" HorizontalAlignment="Left" VerticalAlignment="Top" Height="64" Width="384" FontSize="50" Margin="351,18,0,0" Foreground="#DDFFFFFF"/>
-        <Label Content="Speciality" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Margin="31,83,0,0" Width="90" FontSize="20" Foreground="#DDFFFFFF"/>
-        <TextBox x:Name="txtEspecialidad" Margin="9,136,993,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="64" Foreground="#DDFFFFFF" BorderBrush="#89FFFFFF"/>
-        <Label Content="NombreMaestro" HorizontalAlignment="Left" Height="38" Margin="20,211,0,0" VerticalAlignment="Top" Width="154" FontSize="20" Foreground="#DDFFFFFF"/>
-        <TextBox x:Name="txtNombreMaestros" HorizontalAlignment="Left" Height="39" Margin="15,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Foreground="#DDFFFFFF" BorderBrush="#89FFFFFF"/>
-        <Button x:Name="btnAddMaestro" Content="Save" HorizontalAlignment="Left" Height="42" Margin="31,513,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FF00FF47" Click="btnAddMaestro_Click" />
+        <Label Content="Maestros" HorizontalAlignment="Left" VerticalAlignment="Top" Height="85" Width="295" FontSize="70" Margin="359,2,0,0" Foreground="#DDFFFFFF"/>
+        <Label Content="Especialidad" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Margin="31,153,0,0" Width="123" FontSize="20" Foreground="#DDFFFFFF"/>
+        <TextBox x:Name="txtEspecialidad" Margin="9,200,1010,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="64" Foreground="#DDFFFFFF" BorderBrush="#89FFFFFF"/>
+        <Label Content="Nombre Maestro" HorizontalAlignment="Left" Height="38" Margin="20,271,0,0" VerticalAlignment="Top" Width="158" FontSize="20" Foreground="#DDFFFFFF"/>
+        <TextBox x:Name="txtNombreMaestros" HorizontalAlignment="Left" Height="39" Margin="15,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Foreground="#DDFFFFFF" BorderBrush="#89FFFFFF"/>
+        <Button x:Name="btnAddMaestro" Content="Save" HorizontalAlignment="Left" Height="42" Margin="31,537,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FF00FF47" Click="btnAddMaestro_Click" />
         <TextBox x:Name="txtPkMaestros" HorizontalAlignment="Left" Height="37" Margin="213,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" FontSize="20" Foreground="{x:Null}" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
         <DataGrid x:Name="MasterTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="213,136,13,90" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#1FFF0000" Foreground="#DD000000" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding PkMaestros}"/>
+                <DataGridTextColumn Header="Num.Control" Binding="{Binding PkMaestros}"/>
                 <DataGridTextColumn Header="NombreMaestro" Binding="{Binding NombreMaestros}"/>
-                <DataGridTextColumn Header="Speciality" Binding="{Binding Especialidad}"/>
-                <DataGridTextColumn Header="FechaRegistrada" Binding="{Binding FechasRegistrada}"/>
+                <DataGridTextColumn Header="Especialidad" Binding="{Binding Especialidad}"/>
+                <DataGridTextColumn Header="Fecha Registrada" Binding="{Binding FechasRegistrada}"/>
                 <DataGridTextColumn Header="Papel" Binding="{Binding Path.Nombre}"/>
-                <DataGridTemplateColumn Header="EditMaster">
+                <DataGridTemplateColumn Header="Edit">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="EditItemsMaster" Content="Edit" Click="EditItemsMaster_Click" Background="#FF33F321" />
+                            <Button x:Name="EditItemsMaster" Content="Edit" Click="EditItemsMaster_Click" Background="Yellow" Foreground="Black" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="DeleteMaster">
+                <DataGridTemplateColumn Header="Delete">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button x:Name="DeleteItemsMaster" Content="Delete" Click="DeleteItemsMaster_Click" Background="Red"/>
@@ -46,20 +46,20 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>      
         </DataGrid>
-        <Button Content="" HorizontalAlignment="Left" Height="31" Margin="8,2,0,0" VerticalAlignment="Top" Width="51" BorderBrush="{x:Null}" Click="Button_Click" >
+        <Button Content="" HorizontalAlignment="Left" Height="31" Margin="2,2,0,0" VerticalAlignment="Top" Width="51" BorderBrush="{x:Null}" Click="Button_Click" >
             <Button.Background>
-                <ImageBrush ImageSource="/Vistas-WPF/Return.png"/>
+                <ImageBrush ImageSource="/Vistas-WPF/turn-back.png"/>
             </Button.Background>
         </Button>
-        <ComboBox x:Name="SelectPapel" DisplayMemberPath="Nombre" SelectedValuePath="PKPapel" HorizontalAlignment="Left" Margin="34,470,0,0" VerticalAlignment="Top" Width="120" Foreground="#DD000000" BorderBrush="#89FFFFFF"/>
-        <Label Content="Papel" HorizontalAlignment="Left" Height="33" Margin="44,422,0,0" VerticalAlignment="Top" Width="50" FontSize="16" Foreground="#DDFFFFFF"/>
-        <TextBox x:Name="txtFechasRegistrada" HorizontalAlignment="Left" Height="30" Margin="15,372,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Foreground="#DDFFFFFF" BorderBrush="#89FFFFFF" IsEnabled="False" FontSize="14"/>
-        <Label Content="FechasRegistrada" HorizontalAlignment="Left" Height="38" Margin="17,325,0,0" VerticalAlignment="Top" Width="161" FontSize="20" Foreground="#DDFFFFFF"/>
-        <Button x:Name="Apagado" Content=" " HorizontalAlignment="Left" Height="28" Margin="14,564,0,0" VerticalAlignment="Top" Width="32" BorderBrush="{x:Null}" Click="Apagado_Click">
+        <ComboBox x:Name="SelectPapel" DisplayMemberPath="Nombre" SelectedValuePath="PKPapel" HorizontalAlignment="Left" Margin="36,496,0,0" VerticalAlignment="Top" Width="120" Foreground="#DD000000" BorderBrush="#89FFFFFF"/>
+        <Label Content="Papel" HorizontalAlignment="Left" Height="33" Margin="68,450,0,0" VerticalAlignment="Top" Width="50" FontSize="16" Foreground="#DDFFFFFF"/>
+        <TextBox x:Name="txtFechasRegistrada" HorizontalAlignment="Left" Height="30" Margin="15,412,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Foreground="#DDFFFFFF" BorderBrush="#89FFFFFF" IsEnabled="False" FontSize="14"/>
+        <Label Content="Fecha Registrada" HorizontalAlignment="Left" Height="38" Margin="17,365,0,0" VerticalAlignment="Top" Width="161" FontSize="20" Foreground="#DDFFFFFF"/>
+        <Button x:Name="Apagado" Content=" " HorizontalAlignment="Left" Height="28" Margin="14,592,0,0" VerticalAlignment="Top" Width="32" BorderBrush="{x:Null}" Click="Apagado_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Vistas-WPF/cierre.jpeg"/>
             </Button.Background>
         </Button>
-        <Label Content="Cerrar Sesion" HorizontalAlignment="Left" Height="24" Margin="50,565,0,0" VerticalAlignment="Top" Width="80" Foreground="#DDFFFFFF"/>
+        <Label Content="Cerrar Sesion" HorizontalAlignment="Left" Height="24" Margin="46,593,0,0" VerticalAlignment="Top" Width="80" Foreground="#DDFFFFFF"/>
     </Grid>
 </Window>

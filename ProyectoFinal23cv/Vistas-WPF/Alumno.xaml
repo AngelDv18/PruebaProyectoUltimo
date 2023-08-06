@@ -5,48 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal23cv.Vistas_WPF"
         mc:Ignorable="d"
-        Title="Alumno" Height="820" Width="1445">
+        Title="Alumno" Height="820" Width="1430">
     <Grid>
-        <Label Content="Welcome Student" HorizontalAlignment="Left" VerticalAlignment="Top" Height="87" Width="556" FontSize="60" Margin="469,18,0,0" FontFamily="Algerian"/>
+        <Label Content="EStudiante" HorizontalAlignment="Left" VerticalAlignment="Top" Height="87" Width="556" FontSize="60" Margin="469,18,0,0" FontFamily="Algerian"/>
         <Label Content="Carrera" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Margin="21,65,0,0" Width="90" FontSize="20"/>
-        <Label Content="NombreAlumno" HorizontalAlignment="Left" Height="38" Margin="18,161,0,0" VerticalAlignment="Top" Width="154" FontSize="20"/>
+        <Label Content="Nombre Alumno" HorizontalAlignment="Left" Height="38" Margin="18,161,0,0" VerticalAlignment="Top" Width="159" FontSize="20"/>
         <TextBox x:Name="txtNombreAlumno" HorizontalAlignment="Left" Height="39" Margin="18,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <Label Content="ApellidoPaterno" HorizontalAlignment="Left" Height="38" Margin="21,251,0,0" VerticalAlignment="Top" Width="154" FontSize="20"/>
+        <Label Content="Apellido Paterno" HorizontalAlignment="Left" Height="38" Margin="21,251,0,0" VerticalAlignment="Top" Width="154" FontSize="20"/>
         <TextBox x:Name="txtApellidoP" HorizontalAlignment="Left" Height="39" Margin="21,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <Label Content="ApellidoMaterno" HorizontalAlignment="Left" Height="38" Margin="21,346,0,0" VerticalAlignment="Top" Width="157" FontSize="20"/>
+        <Label Content="Apellido Materno" HorizontalAlignment="Left" Height="38" Margin="21,346,0,0" VerticalAlignment="Top" Width="167" FontSize="20"/>
         <TextBox x:Name="txtApellidoM" HorizontalAlignment="Left" Height="39" Margin="21,389,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <Label Content="FechaqueRegistro" HorizontalAlignment="Left" Height="33" Margin="23,473,0,0" VerticalAlignment="Top" Width="165" FontSize="20"/>
+        <Label Content="Fecha Registro" HorizontalAlignment="Left" Height="38" Margin="23,473,0,0" VerticalAlignment="Top" Width="165" FontSize="20"/>
         <TextBox x:Name="txtFechaqueRegistro" HorizontalAlignment="Left" Height="45" Margin="21,540,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" IsEnabled="False" FontSize="14"/>
         <TextBox x:Name="txtPkAlumno" HorizontalAlignment="Left" Height="37" Margin="213,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" FontSize="20" CaretBrush="{x:Null}" Foreground="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
         <Label Content="Papel" HorizontalAlignment="Left" Height="33" Margin="54,590,0,0" VerticalAlignment="Top" Width="94" FontSize="16"/>
         <ComboBox x:Name="SelectPapel" DisplayMemberPath="Nombre" SelectedValuePath="PKPapel" HorizontalAlignment="Left" Margin="43,633,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnAddAlumno" Content="Save" HorizontalAlignment="Left" Height="42" Margin="45,679,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FFC5FF00" Click="btnAddAlumno_Click" />
+        <Button x:Name="btnAddAlumno" Content="Save" HorizontalAlignment="Left" Height="42" Margin="45,679,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="SpringGreen" Click="btnAddAlumno_Click" />
         <DataGrid x:Name="UserTableAlu" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="247,136,36,90" FontSize="14" FontWeight="Bold"  >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding PkAlumno}"/>
-
-                <DataGridTextColumn Header="NombreAlumno" Binding="{Binding NombreAlumno}"/>
-                <DataGridTextColumn Header="ApellidoPaterno" Binding="{Binding ApellidoP}"/>
-                <DataGridTextColumn Header="ApellidoMaterno" Binding="{Binding ApellidoM}"/>
-                <DataGridTextColumn Header="FechaqueRegistro" Binding="{Binding Fechaqueregistro}"/>
+                <DataGridTextColumn Header="Num.Control" Binding="{Binding PkAlumno}"/>
+                <DataGridTextColumn Header="Nombre Alumno" Binding="{Binding NombreAlumno}"/>
+                <DataGridTextColumn Header="Apellido Paterno" Binding="{Binding ApellidoP}"/>
+                <DataGridTextColumn Header="Apellido Materno" Binding="{Binding ApellidoM}"/>
+                <DataGridTextColumn Header="Fecha Registro" Binding="{Binding Fechaqueregistro}"/>
                 <DataGridTextColumn Header="Papel" Binding="{Binding Papel.Nombre}"/>
-                <DataGridTemplateColumn Header="EditAlumn">
+                <DataGridTemplateColumn Header="Edit">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="EditItemAlu" Content="Edit" Click="EditItemAlu_Click" Background="#FFC5FF00" />
+                            <Button x:Name="EditItemAlu" Content="Edit" Click="EditItemAlu_Click" Background="Yellow" Foreground="#FF020202" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="DeleteAlus">
+                <DataGridTemplateColumn Header="Delete">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button x:Name="DeleteItemAlus" Content="Delete" Click="DeleteItemAlus_Click" Background="Red"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-            </DataGrid.Columns>
-
-                 
+            </DataGrid.Columns>      
         </DataGrid>
         <Button Content="" HorizontalAlignment="Left" Height="31" Margin="8,2,0,0" VerticalAlignment="Top" Width="51" BorderBrush="{x:Null}" Click="Button_Click">
             <Button.Background>

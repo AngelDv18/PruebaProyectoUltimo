@@ -5,38 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal23cv.Vistas_WPF"
         mc:Ignorable="d"
-        Title="Grupo" Height="750" Width="900">
+        Title="Grupo" Height="750" Width="924">
     <Grid>
-        <Label Content="NomberGroup" HorizontalAlignment="Left" Height="38" Margin="24,225,0,0" VerticalAlignment="Top" Width="139" FontSize="20"/>
-        <TextBox x:Name="txtNombreGrupo" HorizontalAlignment="Left" Height="39" Margin="31,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"/>
-        <Button x:Name="btnAdd" Content="Save" HorizontalAlignment="Left" Height="42" Margin="31,600,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FFFFE700" />
-        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="213,136,13,90" FontSize="14" FontWeight="Bold">
+        <TextBox x:Name="txtPKGrupos" HorizontalAlignment="Left" Height="37" Margin="125,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" IsEnabled="False" FontSize="20" CaretBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        <Label Content="Nombre Grupo" HorizontalAlignment="Left" Height="38" Margin="24,225,0,0" VerticalAlignment="Top" Width="148" FontSize="20" Foreground="#DD000000"/>
+        <TextBox x:Name="txtNombreGrupos" HorizontalAlignment="Left" Height="39" Margin="31,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" BorderBrush="#89000000"/>
+        <Button x:Name="btnAdd" Content="Save" HorizontalAlignment="Left" Height="42" Margin="31,600,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FF78FF00" Click="btnAdd_Click" />
+        <DataGrid x:Name="GrupoTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="247,136,36,90" FontSize="14" FontWeight="Bold"  >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
-                <DataGridTextColumn Header="NomberGroup" Binding="{Binding NombreGrupo}"/>
-                <DataGridTextColumn Header="Papel" Binding="{Binding Papel.Nombre}"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding PKGrupos}"/>
+                <DataGridTextColumn Header="Nombre Grupo" Binding="{Binding NombreGrupos}"/>
                 <DataGridTemplateColumn Header="Edit">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Edit"/>
+                            <Button x:Name="EditItemGrupo" Content="Edit" Background="Yellow" Foreground="#FF020202" Click="EditItemGrupo_Click" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Delete">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Delete"/>
+                            <Button x:Name="DeleteItemGrupo" Content="Delete" Background="Red" Click="DeleteItemGrupo_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-            </DataGrid.Columns>
+            </DataGrid.Columns>      
         </DataGrid>
+        
         <Button Content="" HorizontalAlignment="Left" Height="31" Margin="8,2,0,0" VerticalAlignment="Top" Width="51" BorderBrush="#FFF7F7F7" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Vistas-WPF/Return.png"/>
             </Button.Background>
         </Button>
-        <Label Content="Welcome Group"  FontSize="50" HorizontalAlignment="Center" Height="79" Margin="0,10,0,0" VerticalAlignment="Top" Width="373"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="24" Margin="59,668,0,0" VerticalAlignment="Top" Width="38" Click="Button_Click_1"/>
+        <Label Content="Grupo"  FontSize="50" HorizontalAlignment="Center" Height="79" Margin="0,10,0,0" VerticalAlignment="Top" Width="373"/>
+        <Button Content=" " HorizontalAlignment="Left" Height="30" Margin="21,668,0,0" VerticalAlignment="Top" Width="38" Click="Button_Click_1" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/Vistas-WPF/exit.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

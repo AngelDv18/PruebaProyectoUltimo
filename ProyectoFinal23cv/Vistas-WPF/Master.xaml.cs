@@ -30,6 +30,7 @@ namespace ProyectoFinal23cv.Vistas_WPF
         MaestrosServices servics = new MaestrosServices();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
             Menu meus = new Menu();
             meus.Show();
             Close();
@@ -117,6 +118,9 @@ namespace ProyectoFinal23cv.Vistas_WPF
         }
         private void Apagado_Click(object sender, RoutedEventArgs e)
         {
+            {
+                MessageBox.Show("Sesión Cerrada");
+            }
             MainWindow login = new MainWindow();
             login.Show();
             Close();

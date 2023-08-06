@@ -1,6 +1,10 @@
-﻿using ProyectoFinal23cv.Vistas_WPF;
+﻿using ProyectoFinal23cv.Entities;
+using ProyectoFinal23cv.Services;
+using ProyectoFinal23cv.Vistas_WPF;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +16,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Ubiety.Dns.Core;
 
 namespace ProyectoFinal23cv
 {
@@ -20,39 +25,95 @@ namespace ProyectoFinal23cv
     /// </summary>
     public partial class Menu : Window
     {
+        public string UserRole { get; set; }
+
         public Menu()
         {
-            InitializeComponent();
+            InitializeComponent();    
+            
+
         }
-        private void txtAlumnno_Click(object sender, RoutedEventArgs e)
+        private void btnAlumno_Click(object sender, RoutedEventArgs e)
         {
-            Alumno alumno = new Alumno();
-            alumno.Show();
-            Close();
+            if (UserRole == "Alumnos" || UserRole == "SA" || UserRole == "Admin")
+            {
+                Alumno alumn = new Alumno();
+                alumn.Show();
+                Hide();
+            }
+            else
+            {
+                MessageBox.Show("Acceso Denegado");
+            }
+
+
         }
-        private void txtMaestro_Click(object sender, RoutedEventArgs e)
+        private void btnMaestro_Click(object sender, RoutedEventArgs e)
         {
-            Master maestros = new Master();
-            maestros.Show();
-            Close();
+            if (UserRole == "Maestros" || UserRole == "SA" || UserRole == "Admin")
+            {
+                Master mast = new Master();
+                mast.Show();
+                Hide();
+            }
+            else
+            {
+                MessageBox.Show("Acceso Denegado");
+            }
+       
         }
-        private void txtCarrera_Click(object sender, RoutedEventArgs e)
+        private void btnCarrera_Click(object sender, RoutedEventArgs e)
         {
-            Carrera carrera = new Carrera();
-            carrera.Show();
-            Close();
+            if (UserRole == "SA" || UserRole == "Admin")
+            {
+                Carrera car = new Carrera();
+                car.Show();
+                Hide();
+            }
+            else
+            {
+                MessageBox.Show("Acceso Denegado");
+            }
+        
         }
-        private void txtGrupo_Click(object sender, RoutedEventArgs e)
+        private void btnGrupo_Click(object sender, RoutedEventArgs e)
         {
-            Grupo grupo = new Grupo();
-            grupo.Show();
-            Close();
+            if (UserRole == "SA" || UserRole == "Admin")
+            {
+                Grupo gru = new Grupo();
+                gru.Show();
+                Hide();
+            }
+            else
+            {
+                MessageBox.Show("Acceso Denegado");
+            }
+        
         }
-        private void txtAdmin_Click(object sender, RoutedEventArgs e)
+        private void btnAdmin_Click(object sender, RoutedEventArgs e)
         {
-            Sistemas sistemas = new Sistemas();
-            sistemas.Show();
-            Close();
+            if (UserRole == "SA" || UserRole == "Admin")
+            {
+                Sistemas sa = new Sistemas();
+                sa.Show();
+                Hide();
+            }
+            else
+            {
+                MessageBox.Show("Acceso Denegado");
+            }
+        
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            {
+                MessageBox.Show("Sesión Cerrada");
+            }
+                MainWindow login = new MainWindow();
+                login.Show();
+                Close();
+            
+        }
+
     }
 }

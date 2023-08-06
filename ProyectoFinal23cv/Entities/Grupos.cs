@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal23cv.Entities
 {
-    public class Grupo
+    public class Grupos
     {
         [Key]
-        public int PKGrupo { get; set; }
+        public int PKGrupos { get; set; }
         public string NombreGrupos { get; set; }
     }
 }

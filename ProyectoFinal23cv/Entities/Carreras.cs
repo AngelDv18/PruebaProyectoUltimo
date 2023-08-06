@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal23cv.Entities
 {
-    public class Carrera
+    public class Carreras
     {
         [Key]
-        public int PKCarrera { get; set; }
-        public string NombreCarrera { get; set; }
+        public int PKCarreras { get; set; }
+        public string NombreCarreras { get; set; }
 
     }
 }

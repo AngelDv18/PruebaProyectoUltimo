@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal23cv"
         mc:Ignorable="d"
-        Title="Window_Sistem" Height="800" Width="1400">
+        Title="Window_Sistem" Height="850" Width="1400">
     <Grid Margin="0,2,0,-8">
         <Label Content="Welcome to the Sistem" HorizontalAlignment="Left" VerticalAlignment="Top" Height="220" Width="1005" FontSize="50" Margin="277,2,0,0">
             <Label.Background>
@@ -14,13 +14,13 @@
         </Label>
         <Label Content="Nomber" HorizontalAlignment="Left" Height="38" Margin="31,77,0,0" VerticalAlignment="Top" Width="95" FontSize="20"/>
         <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="39" Margin="31,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"/>
-        <Label Content="User" HorizontalAlignment="Left" Height="47" Margin="32,175,0,0" VerticalAlignment="Top" Width="80" FontSize="20"/>
+        <Label Content="Usuario" HorizontalAlignment="Left" Height="47" Margin="32,175,0,0" VerticalAlignment="Top" Width="80" FontSize="20"/>
         <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="37" Margin="32,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"/>
-        <Label Content="Password" HorizontalAlignment="Left" Height="45" Margin="32,279,0,0" VerticalAlignment="Top" Width="95" FontSize="20"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Height="45" Margin="32,279,0,0" VerticalAlignment="Top" Width="120" FontSize="20"/>
         <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="42" Margin="32,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" RenderTransformOrigin="0.499,0.505"/>
         <Label Content="FechaRegistro" HorizontalAlignment="Left" Height="42" Margin="30,372,0,0" VerticalAlignment="Top" Width="134" FontSize="20"/>
         <TextBox x:Name="txtFechaRegistro" HorizontalAlignment="Left" Height="39" Margin="10,418,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontSize="14" IsEnabled="False"/>
-        <Button x:Name="btnAdd" Content="Save" HorizontalAlignment="Left" Height="42" Margin="32,606,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FFFF7800" Click="btnAdd_Click" BorderBrush="White"/>
+        <Button x:Name="btnAdd" Content="Save" HorizontalAlignment="Left" Height="42" Margin="32,606,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FF8DFF00" Click="btnAdd_Click" BorderBrush="White"/>
         <Button Content="" HorizontalAlignment="Left" Height="26" Margin="3,2,0,0" VerticalAlignment="Top" Width="25" BorderBrush="#FFF7F7F7" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Vistas-WPF/Return.png"/>
@@ -29,15 +29,15 @@
         <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="198,175,17,51" FontSize="18" FontWeight="Bold">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding PkUsuario}"/>
-                <DataGridTextColumn Header="Nomber" Binding="{Binding Nombre}"/>
-                <DataGridTextColumn Header="User" Binding="{Binding UserName}"/>
-                <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
-                <DataGridTextColumn Header="DateTime" Binding="{Binding FechaRegistro}"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
+                <DataGridTextColumn Header="Usuario" Binding="{Binding UserName}"/>
+                <DataGridTextColumn Header="Contraseña" Binding="{Binding Password}"/>
+                <DataGridTextColumn Header="FechaRegistro" Binding="{Binding FechaRegistro}"/>
                 <DataGridTextColumn Header="Papel" Binding="{Binding Papel.Nombre}"/>
                 <DataGridTemplateColumn Header="Edit">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Edit" Click="EditItem" Background="Black" BorderBrush="#FFF32121"/>
+                            <Button Content="Edit" Click="EditItem" Background="#FFF7F20E" BorderBrush="#FFF32121" Foreground="Black"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -55,6 +55,12 @@
         <Label Content="Papel" HorizontalAlignment="Left" Height="33" Margin="32,493,0,0" VerticalAlignment="Top" Width="95" FontSize="16"/>
         <ComboBox x:Name="SelectPapel" DisplayMemberPath="Nombre" SelectedValuePath="PKPapel" HorizontalAlignment="Left" Margin="32,556,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtPkUser" HorizontalAlignment="Left" Height="37" Margin="159,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" IsEnabled="False" FontSize="20" BorderBrush="{x:Null}" CaretBrush="{x:Null}" Foreground="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" Background="{x:Null}"/>
+        <Button x:Name="btnConsulta" Content="" HorizontalAlignment="Left" Height="96" Margin="42,652,0,0" VerticalAlignment="Top" Width="108" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/Vistas-WPF/search.png"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Consultas" HorizontalAlignment="Left" Height="22" Margin="79,748,0,0" VerticalAlignment="Top" Width="59"/>
 
 
     </Grid>
