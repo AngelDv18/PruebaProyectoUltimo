@@ -53,6 +53,6 @@
                 </LinearGradientBrush>
             </DataGrid.Background>
         </DataGrid>
-        <Button x:Name="btnAdios" Content="Salir" HorizontalAlignment="Left" Height="45" Margin="732,0,0,0" VerticalAlignment="Center" Width="85" FontSize="16" Background="#FFBF21F3" Click="btnAdios_Click"/>
+        <Button x:Name="btnAdios" Content="Menu" HorizontalAlignment="Left" Height="45" Margin="732,0,0,0" VerticalAlignment="Center" Width="85" FontSize="16" Background="#FFBF21F3" Click="btnAdios_Click"/>
     </Grid>
 </Window>

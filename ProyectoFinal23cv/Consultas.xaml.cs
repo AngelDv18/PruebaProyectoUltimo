@@ -68,8 +68,8 @@ namespace ProyectoFinal23cv
 
         private void btnAdios_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow inicio = new MainWindow();
-            inicio.Show();
+            Menu sel = new Menu();
+            sel.Show();
             Close();
         }
     }
