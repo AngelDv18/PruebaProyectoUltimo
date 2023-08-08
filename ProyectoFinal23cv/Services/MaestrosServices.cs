@@ -24,6 +24,8 @@ namespace ProyectoFinal23cv.Services
                         chuleta.Especialidad = requst.Especialidad;
                         chuleta.FechasRegistrada = DateTime.Now;
                         chuleta.FkPapel = requst.FkPapel;
+                        chuleta.FkCarreras = requst.FkCarreras;
+                        chuleta.FkGrupos = requst.FkGrupos;
 
                         _context.Maestros.Add(chuleta);
                         _context.SaveChanges();
@@ -124,8 +126,16 @@ namespace ProyectoFinal23cv.Services
         {
             using (var _context = new ApplicationDbContext())
             {
-                return _context.Maestros.Where(m => m.PkMaestros.Equals(filtro) ||
-                m.NombreMaestros.Contains(filtro) || m.Especialidad.Contains(filtro)).ToList();
+                return _context.Maestros
+                    //.Include(m => m.FkCarreras) // Incluye la relación con Carrera
+                    //                    .Include(m => m.FkGrupos)   // Incluye la relación con Grupo
+                                        .Where(m => m.PkMaestros.Equals(filtro) ||
+                                       m.NombreMaestros.Contains(filtro) ||
+                                       m.Especialidad.Contains(filtro))
+                                        .ToList();
+
+                //return _context.Maestros.Where(m => m.PkMaestros.Equals(filtro) ||
+                //m.NombreMaestros.Contains(filtro) || m.Especialidad.Contains(filtro)).ToList();
             }
         }
     }

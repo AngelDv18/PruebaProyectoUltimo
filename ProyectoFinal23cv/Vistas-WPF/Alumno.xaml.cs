@@ -45,12 +45,16 @@ namespace ProyectoFinal23cv.Vistas_WPF
                 alu.ApellidoM = txtApellidoM.Text;
                 alu.Fechaqueregistro = DateTime.Now;
                 alu.FkPapel = int.Parse(SelectPapel.SelectedValue.ToString());
+                alu.FkCarreras = int.Parse(txtFkCarreras.Text);
+                alu.FkGrupos = int.Parse(txtFkGrupo.Text);
 
                 servis.AddAlumn(alu);
                 txtNombreAlumno.Clear();
                 txtApellidoP.Clear();
                 txtApellidoM.Clear();
                 txtFechaqueRegistro.Clear();
+                txtFkCarreras.Clear();
+                txtFkGrupo.Clear();
 
                 MessageBox.Show("Se Agrego Correctamente");
                 GetUserTableAlu();
@@ -69,11 +73,15 @@ namespace ProyectoFinal23cv.Vistas_WPF
                     alu.ApellidoM = txtApellidoM.Text;
                     alu.Fechaqueregistro = DateTime.Now;
                     alu.FkPapel = int.Parse(SelectPapel.SelectedValue.ToString());
+                    alu.FkCarreras = int.Parse(txtFkCarreras.Text);
+                    alu.FkGrupos = int.Parse(txtFkGrupo.Text);
  
                     txtNombreAlumno.Clear();
                     txtApellidoP.Clear();
                     txtApellidoM.Clear();
                     txtFechaqueRegistro.Clear();
+                    txtFkCarreras.Clear();
+                    txtFkGrupo.Clear();
 
                     servis.EditAlumn(alu);
 
@@ -108,6 +116,8 @@ namespace ProyectoFinal23cv.Vistas_WPF
             txtApellidoM.Text = alumnose.ApellidoM.ToString();
             txtFechaqueRegistro.Text = alumnose.Fechaqueregistro.ToString();
             SelectPapel.SelectedValue = alumnose.FkPapel;
+            txtFkCarreras.Text = alumnose.FkCarreras.ToString();
+            txtFkGrupo.Text = alumnose.FkGrupos.ToString();
         }
         private void DeleteItemAlus_Click(object sender, RoutedEventArgs e)
         {
@@ -123,6 +133,8 @@ namespace ProyectoFinal23cv.Vistas_WPF
                 txtApellidoP.Clear();
                 txtApellidoM.Clear();
                 txtFechaqueRegistro.Clear();
+                txtFkCarreras.Clear();
+                txtFkGrupo.Clear();
                 MessageBox.Show("Alumno eliminado correctamente.");
                 GetUserTableAlu();
             }

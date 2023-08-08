@@ -44,10 +44,15 @@ namespace ProyectoFinal23cv.Vistas_WPF
                 ma.Especialidad = txtEspecialidad.Text;
                 ma.FechasRegistrada = DateTime.Now;
                 ma.FkPapel = int.Parse(SelectPapel.SelectedValue.ToString());
+                ma.FkCarreras = int.Parse(txtFkCarreras.Text);
+                ma.FkGrupos = int.Parse(txtFkGrupos.Text);
+
 
                 servics.AddMaster(ma);
                 txtNombreMaestros.Clear();
                 txtEspecialidad.Clear();
+                txtFkCarreras.Clear();
+                txtFkGrupos.Clear();
 
                 MessageBox.Show("Se Agrego Correctamente");
                 GetMasterTable();
@@ -63,11 +68,15 @@ namespace ProyectoFinal23cv.Vistas_WPF
                     ma.Especialidad = txtEspecialidad.Text;
                     ma.FechasRegistrada = DateTime.Now;
                     ma.FkPapel = int.Parse(SelectPapel.SelectedValue.ToString());
+                    ma.FkCarreras = int.Parse(txtFkCarreras.Text);
+                    ma.FkGrupos = int.Parse(txtFkGrupos.Text);
 
                     txtNombreMaestros.Clear();
                     txtEspecialidad.Clear();
                     txtFechasRegistrada.Clear();
                     txtPkMaestros.Clear();
+                    txtFkCarreras.Clear();
+                    txtFkGrupos.Clear();
 
                     servics.EditMaster(ma);
 
@@ -99,6 +108,8 @@ namespace ProyectoFinal23cv.Vistas_WPF
             txtEspecialidad.Text = mase.Especialidad.ToString();
             txtFechasRegistrada.Text = mase.FechasRegistrada.ToString();
             SelectPapel.SelectedValue = mase.FkPapel;
+            txtFkCarreras.Text = mase.FkCarreras.ToString();
+            txtFkGrupos.Text = mase.FkGrupos.ToString();
         }
         private void DeleteItemsMaster_Click(object sender, RoutedEventArgs e)
         {
@@ -112,6 +123,8 @@ namespace ProyectoFinal23cv.Vistas_WPF
                 txtEspecialidad.Clear();
                 txtPkMaestros.Clear();
                 txtFechasRegistrada.Clear();
+                txtFkCarreras.Clear();
+                txtFkGrupos.Clear();
                 MessageBox.Show("Maestro eliminado correctamente.");
                 GetMasterTable();
             }

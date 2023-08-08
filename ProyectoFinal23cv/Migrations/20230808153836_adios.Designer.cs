@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProyectoFinal23cv.Context;
 
 namespace ProyectoFinal23cv.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230808153836_adios")]
+    partial class adios
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,12 +36,6 @@ namespace ProyectoFinal23cv.Migrations
                     b.Property<DateTime>("Fechaqueregistro")
                         .HasColumnType("datetime");
 
-                    b.Property<int>("FkCarreras")
-                        .HasColumnType("int");
-
-                    b.Property<int>("FkGrupos")
-                        .HasColumnType("int");
-
                     b.Property<int?>("FkPapel")
                         .IsRequired()
                         .HasColumnType("int");
@@ -59,6 +55,9 @@ namespace ProyectoFinal23cv.Migrations
                 {
                     b.Property<int>("PKCarreras")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("FkMaestros")
                         .HasColumnType("int");
 
                     b.Property<string>("NombreCarreras")

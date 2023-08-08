@@ -45,7 +45,7 @@
             <Button x:Name="btnSalir" Content="Salir" Click="btnSalir_Click" BorderBrush="Red" Background="#FFF37B21"/>
         </StackPanel>
 
-        <DataGrid Grid.Row="1" x:Name="dataGrid" Margin="100,10,105,10" Foreground="Black" FontSize="14" GridLinesVisibility="All" HorizontalGridLinesBrush="Black" RenderTransformOrigin="0.5,0" FontFamily="Bahnschrift Condensed" BorderBrush="#1F000000" VerticalGridLinesBrush="Black" >
+        <DataGrid Grid.Row="1" x:Name="dataGrid" Margin="55,10,64,10" Foreground="Black" FontSize="14" GridLinesVisibility="All" HorizontalGridLinesBrush="Black" RenderTransformOrigin="0.5,0" FontFamily="Bahnschrift Condensed" BorderBrush="#1F000000" VerticalGridLinesBrush="Black" >
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFA2C583" Offset="0"/>

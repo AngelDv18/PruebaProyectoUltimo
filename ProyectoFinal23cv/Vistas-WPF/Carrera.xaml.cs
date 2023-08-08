@@ -47,6 +47,7 @@ namespace ProyectoFinal23cv.Vistas_WPF
             if (txtPKCarrera.Text == "")
             {
                 mojo.NombreCarreras = txtNombreCarreras.Text;
+                
 
                 serviceses.AddCarrera(mojo);
                 txtNombreCarreras.Clear();

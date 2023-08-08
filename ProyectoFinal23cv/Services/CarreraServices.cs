@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProyectoFinal23cv.Context;
 using ProyectoFinal23cv.Entities;
+using ProyectoFinal23cv.Vistas_WPF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace ProyectoFinal23cv.Services
                     {
                         Carreras carer = new Carreras();
                         carer.NombreCarreras = requste.NombreCarreras;
-
+                   
                         _context.Carreras.Add(carer);
                         _context.SaveChanges();
                     }

@@ -19,14 +19,14 @@
         <Label Content="Contraseña" HorizontalAlignment="Left" Height="45" Margin="32,279,0,0" VerticalAlignment="Top" Width="120" FontSize="20"/>
         <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="42" Margin="32,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" RenderTransformOrigin="0.499,0.505"/>
         <Label Content="FechaRegistro" HorizontalAlignment="Left" Height="42" Margin="30,372,0,0" VerticalAlignment="Top" Width="134" FontSize="20"/>
-        <TextBox x:Name="txtFechaRegistro" HorizontalAlignment="Left" Height="39" Margin="10,418,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontSize="14" IsEnabled="False"/>
+        <TextBox x:Name="txtFechaRegistro" HorizontalAlignment="Left" Height="39" Margin="10,418,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontSize="14" IsEnabled="False" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Matura MT Script Capitals"/>
         <Button x:Name="btnAdd" Content="Guardar" HorizontalAlignment="Left" Height="42" Margin="32,606,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FF8DFF00" Click="btnAdd_Click" BorderBrush="White"/>
         <Button Content="" HorizontalAlignment="Left" Height="26" Margin="3,2,0,0" VerticalAlignment="Top" Width="25" BorderBrush="#FFF7F7F7" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Vistas-WPF/Return.png"/>
             </Button.Background>
         </Button>
-        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="198,175,17,51" FontSize="18" FontWeight="Bold">
+        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="198,175,17,51" FontSize="18" FontWeight="Bold" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF5A945A" GridLinesVisibility="All">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding PkUsuario}"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>

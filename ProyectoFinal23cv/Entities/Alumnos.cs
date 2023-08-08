@@ -19,5 +19,8 @@ namespace ProyectoFinal23cv.Entities
         [ForeignKey("Papel")]
         public int? FkPapel { get; set; }
         public Papel Papel { get; set; }
+
+        public int FkCarreras { get; set; }
+        public int FkGrupos { get; set; }
     }
 }

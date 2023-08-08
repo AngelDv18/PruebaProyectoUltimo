@@ -26,6 +26,8 @@ namespace ProyectoFinal23cv.Services
                         alum.ApellidoM = requet.ApellidoM;
                         alum.Fechaqueregistro = requet.Fechaqueregistro;
                         alum.FkPapel = requet.FkPapel;
+                        alum.FkCarreras = requet.FkCarreras;
+                        alum.FkGrupos = requet.FkGrupos;
 
                         _context.Alumnos.Add(alum);
                         _context.SaveChanges();
@@ -119,14 +121,18 @@ namespace ProyectoFinal23cv.Services
                 throw new Exception("Sucedio un error: " + ex.Message);
             }
         }
-
-
         public List<Alumnos> BuscarAlumnos(string filtro)
         {
             using (var _context = new ApplicationDbContext())
             {
-                return _context.Alumnos.Where(a => a.PkAlumno.Equals(filtro) || a.NombreAlumno.Contains(filtro) ||
-                a.ApellidoP.Contains(filtro) || a.ApellidoM.Contains(filtro)).ToList();
+                return _context.Alumnos
+                    //.Include(m => m.FkCarreras) // Incluye la relación con Carrera
+                    //                   .Include(m => m.FkGrupos)   // Incluye la relación con Grupo
+                                       .Where(a => a.PkAlumno.Equals(filtro) || 
+                                      a.NombreAlumno.Contains(filtro) ||
+                                      a.ApellidoP.Contains(filtro) || 
+                                      a.ApellidoM.Contains(filtro)).ToList();
+
             }
         }
     }
