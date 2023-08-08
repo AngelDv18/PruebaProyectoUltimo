@@ -65,5 +65,12 @@ namespace ProyectoFinal23cv
             logim.Show();
             Close();
         }
+
+        private void btnAdios_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow inicio = new MainWindow();
+            inicio.Show();
+            Close();
+        }
     }
 }

@@ -25,7 +25,9 @@ namespace ProyectoFinal23cv.Vistas_WPF
         {
             InitializeComponent();
             GetUserTableAlu();
-            GetPapeles();      
+            GetPapeles();
+            GetCarrer();
+            GetGropu();
         }
         AlumnosServices servis = new AlumnosServices();
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -39,22 +41,19 @@ namespace ProyectoFinal23cv.Vistas_WPF
             Alumnos alu = new Alumnos();
             if (txtPkAlumno.Text == "")
             {
-
                 alu.NombreAlumno = txtNombreAlumno.Text;
                 alu.ApellidoP = txtApellidoP.Text;
                 alu.ApellidoM = txtApellidoM.Text;
                 alu.Fechaqueregistro = DateTime.Now;
                 alu.FkPapel = int.Parse(SelectPapel.SelectedValue.ToString());
-                alu.FkCarreras = int.Parse(txtFkCarreras.Text);
-                alu.FkGrupos = int.Parse(txtFkGrupo.Text);
+                alu.FkCarreras = int.Parse(SelectCarrera.SelectedValue.ToString());
+                alu.FkGrupos = int.Parse(SelectGrupos.SelectedValue.ToString());
 
                 servis.AddAlumn(alu);
                 txtNombreAlumno.Clear();
                 txtApellidoP.Clear();
                 txtApellidoM.Clear();
-                txtFechaqueRegistro.Clear();
-                txtFkCarreras.Clear();
-                txtFkGrupo.Clear();
+                txtFechaqueRegistro.Clear();              
 
                 MessageBox.Show("Se Agrego Correctamente");
                 GetUserTableAlu();
@@ -73,15 +72,13 @@ namespace ProyectoFinal23cv.Vistas_WPF
                     alu.ApellidoM = txtApellidoM.Text;
                     alu.Fechaqueregistro = DateTime.Now;
                     alu.FkPapel = int.Parse(SelectPapel.SelectedValue.ToString());
-                    alu.FkCarreras = int.Parse(txtFkCarreras.Text);
-                    alu.FkGrupos = int.Parse(txtFkGrupo.Text);
+                    alu.FkCarreras = int.Parse(SelectCarrera.SelectedValue.ToString());
+                    alu.FkGrupos = int.Parse(SelectGrupos.SelectedValue.ToString());
  
                     txtNombreAlumno.Clear();
                     txtApellidoP.Clear();
                     txtApellidoM.Clear();
                     txtFechaqueRegistro.Clear();
-                    txtFkCarreras.Clear();
-                    txtFkGrupo.Clear();
 
                     servis.EditAlumn(alu);
 
@@ -104,6 +101,17 @@ namespace ProyectoFinal23cv.Vistas_WPF
             /* SelectPapel.DisplayMenberPath = "Nombre"; */     /*esto sirve para no mandarlo a llamar desde el diseño*/
             /* SelectPapel.SelectedValuePath = "PKPapel"; */
         }
+
+        public void GetCarrer()
+        {
+            SelectCarrera.ItemsSource = servis.GetCarrer();
+        }
+
+        public void GetGropu()
+        {
+            SelectGrupos.ItemsSource = servis.GetGrup();
+        }
+
         private void EditItemAlu_Click(object sender, RoutedEventArgs e)
         {
             Alumnos alumnose = new Alumnos();
@@ -116,8 +124,8 @@ namespace ProyectoFinal23cv.Vistas_WPF
             txtApellidoM.Text = alumnose.ApellidoM.ToString();
             txtFechaqueRegistro.Text = alumnose.Fechaqueregistro.ToString();
             SelectPapel.SelectedValue = alumnose.FkPapel;
-            txtFkCarreras.Text = alumnose.FkCarreras.ToString();
-            txtFkGrupo.Text = alumnose.FkGrupos.ToString();
+            SelectCarrera.SelectedValue = alumnose.FkCarreras;
+            SelectGrupos.SelectedValue = alumnose.FkGrupos;
         }
         private void DeleteItemAlus_Click(object sender, RoutedEventArgs e)
         {
@@ -133,8 +141,6 @@ namespace ProyectoFinal23cv.Vistas_WPF
                 txtApellidoP.Clear();
                 txtApellidoM.Clear();
                 txtFechaqueRegistro.Clear();
-                txtFkCarreras.Clear();
-                txtFkGrupo.Clear();
                 MessageBox.Show("Alumno eliminado correctamente.");
                 GetUserTableAlu();
             }

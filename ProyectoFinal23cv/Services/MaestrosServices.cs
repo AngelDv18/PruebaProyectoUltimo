@@ -106,6 +106,38 @@ namespace ProyectoFinal23cv.Services
             }
         }
 
+        public List<Carreras> GetCarreraas()
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    List<Carreras> ca = _context.Carreras.ToList();
+                    return ca;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Sucedio un error " + ex.Message);
+            }
+        }
+
+        public List<Grupos> GetGroups()
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    List<Grupos> gu = _context.Grupos.ToList();
+                    return gu;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Sucedio un error " + ex.Message);
+            }
+        }
+
         public Maestros GetMastersById(int mateId)
         {
             try

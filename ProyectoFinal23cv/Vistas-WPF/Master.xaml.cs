@@ -26,6 +26,8 @@ namespace ProyectoFinal23cv.Vistas_WPF
             InitializeComponent();
             GetMasterTable();
             GetPapels();
+            GetCarreraas();
+            GetGruops();
         }
         MaestrosServices servics = new MaestrosServices();
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -44,15 +46,13 @@ namespace ProyectoFinal23cv.Vistas_WPF
                 ma.Especialidad = txtEspecialidad.Text;
                 ma.FechasRegistrada = DateTime.Now;
                 ma.FkPapel = int.Parse(SelectPapel.SelectedValue.ToString());
-                ma.FkCarreras = int.Parse(txtFkCarreras.Text);
-                ma.FkGrupos = int.Parse(txtFkGrupos.Text);
-
+                ma.FkCarreras = int.Parse(SelectCarreras.SelectedValue.ToString());
+                ma.FkGrupos = int.Parse(SelectGrupos.SelectedValue.ToString());
 
                 servics.AddMaster(ma);
                 txtNombreMaestros.Clear();
                 txtEspecialidad.Clear();
-                txtFkCarreras.Clear();
-                txtFkGrupos.Clear();
+
 
                 MessageBox.Show("Se Agrego Correctamente");
                 GetMasterTable();
@@ -68,15 +68,13 @@ namespace ProyectoFinal23cv.Vistas_WPF
                     ma.Especialidad = txtEspecialidad.Text;
                     ma.FechasRegistrada = DateTime.Now;
                     ma.FkPapel = int.Parse(SelectPapel.SelectedValue.ToString());
-                    ma.FkCarreras = int.Parse(txtFkCarreras.Text);
-                    ma.FkGrupos = int.Parse(txtFkGrupos.Text);
+                    ma.FkCarreras = int.Parse(SelectCarreras.SelectedValue.ToString());
+                    ma.FkGrupos= int.Parse(SelectGrupos.SelectedValue.ToString());
 
                     txtNombreMaestros.Clear();
                     txtEspecialidad.Clear();
                     txtFechasRegistrada.Clear();
-                    txtPkMaestros.Clear();
-                    txtFkCarreras.Clear();
-                    txtFkGrupos.Clear();
+                    txtPkMaestros.Clear();                  
 
                     servics.EditMaster(ma);
 
@@ -99,6 +97,17 @@ namespace ProyectoFinal23cv.Vistas_WPF
             /* SelectPapel.DisplayMenberPath = "Nombre"; */     /*esto sirve para no mandarlo a llamar desde el diseño*/
             /* SelectPapel.SelectedValuePath = "PKPapel"; */
         }
+
+        public void GetCarreraas()
+        {
+            SelectCarreras.ItemsSource = servics.GetCarreraas();
+        }
+
+        public void GetGruops()
+        {
+            SelectGrupos.ItemsSource = servics.GetGroups();
+        }
+
         private void EditItemsMaster_Click(object sender, RoutedEventArgs e)
         {
             Maestros mase = new Maestros();
@@ -108,8 +117,9 @@ namespace ProyectoFinal23cv.Vistas_WPF
             txtEspecialidad.Text = mase.Especialidad.ToString();
             txtFechasRegistrada.Text = mase.FechasRegistrada.ToString();
             SelectPapel.SelectedValue = mase.FkPapel;
-            txtFkCarreras.Text = mase.FkCarreras.ToString();
-            txtFkGrupos.Text = mase.FkGrupos.ToString();
+            SelectCarreras.SelectedValue = mase.FkCarreras;
+            SelectGrupos.SelectedValue = mase.FkGrupos;
+           
         }
         private void DeleteItemsMaster_Click(object sender, RoutedEventArgs e)
         {
@@ -123,8 +133,7 @@ namespace ProyectoFinal23cv.Vistas_WPF
                 txtEspecialidad.Clear();
                 txtPkMaestros.Clear();
                 txtFechasRegistrada.Clear();
-                txtFkCarreras.Clear();
-                txtFkGrupos.Clear();
+
                 MessageBox.Show("Maestro eliminado correctamente.");
                 GetMasterTable();
             }

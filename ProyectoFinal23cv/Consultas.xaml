@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal23cv"
         mc:Ignorable="d"
-        Title="Consultas" Height="450" Width="800">
+        Title="Consultas" Height="480" Width="900">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/consultin.png"/>
@@ -45,7 +45,7 @@
             <Button x:Name="btnSalir" Content="Salir" Click="btnSalir_Click" BorderBrush="Red" Background="#FFF37B21"/>
         </StackPanel>
 
-        <DataGrid Grid.Row="1" x:Name="dataGrid" Margin="55,10,64,10" Foreground="Black" FontSize="14" GridLinesVisibility="All" HorizontalGridLinesBrush="Black" RenderTransformOrigin="0.5,0" FontFamily="Bahnschrift Condensed" BorderBrush="#1F000000" VerticalGridLinesBrush="Black" >
+        <DataGrid Grid.Row="1" x:Name="dataGrid" Margin="55,10,64,25" Foreground="Black" FontSize="14" GridLinesVisibility="All" HorizontalGridLinesBrush="Black" RenderTransformOrigin="0.5,0" FontFamily="Bahnschrift Condensed" BorderBrush="#1F000000" VerticalGridLinesBrush="Black" >
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFA2C583" Offset="0"/>
@@ -53,5 +53,6 @@
                 </LinearGradientBrush>
             </DataGrid.Background>
         </DataGrid>
+        <Button x:Name="btnAdios" Content="Salir" HorizontalAlignment="Left" Height="45" Margin="732,0,0,0" VerticalAlignment="Center" Width="85" FontSize="16" Background="#FFBF21F3" Click="btnAdios_Click"/>
     </Grid>
 </Window>

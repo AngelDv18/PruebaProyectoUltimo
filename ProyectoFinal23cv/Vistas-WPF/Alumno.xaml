@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="Alumno" Height="820" Width="1430">
     <Grid>
-        <Label Content="EStudiante" HorizontalAlignment="Left" VerticalAlignment="Top" Height="87" Width="556" FontSize="60" Margin="469,18,0,0" FontFamily="Algerian"/>
+        <Label Content="EStudiante" HorizontalAlignment="Left" VerticalAlignment="Top" Height="87" Width="556" FontSize="60" Margin="651,23,0,0" FontFamily="Algerian"/>
         <Label Content="Carrera" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Margin="23,61,0,0" Width="78" FontSize="20"/>
+        <ComboBox x:Name="SelectCarrera" DisplayMemberPath="NombreCarreras" SelectedValuePath="PKCarreras" HorizontalAlignment="Left" Height="35" Margin="23,101,0,0" VerticalAlignment="Top" Width="155"/>
         <Label Content="Nombre Alumno" HorizontalAlignment="Left" Height="38" Margin="18,161,0,0" VerticalAlignment="Top" Width="159" FontSize="20"/>
         <TextBox x:Name="txtNombreAlumno" HorizontalAlignment="Left" Height="39" Margin="18,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
         <Label Content="Apellido Paterno" HorizontalAlignment="Left" Height="38" Margin="21,251,0,0" VerticalAlignment="Top" Width="154" FontSize="20"/>
@@ -17,7 +18,7 @@
         <TextBox x:Name="txtApellidoM" HorizontalAlignment="Left" Height="39" Margin="21,389,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
         <Label Content="Fecha Registro" HorizontalAlignment="Left" Height="38" Margin="23,473,0,0" VerticalAlignment="Top" Width="165" FontSize="20"/>
         <TextBox x:Name="txtFechaqueRegistro" HorizontalAlignment="Left" Height="45" Margin="21,540,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="14" FontFamily="Showcard Gothic" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <TextBox x:Name="txtPkAlumno" HorizontalAlignment="Left" Height="37" Margin="213,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" FontSize="20" CaretBrush="{x:Null}" Foreground="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
+        <TextBox x:Name="txtPkAlumno" HorizontalAlignment="Left" Height="37" Margin="493,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" FontSize="20" CaretBrush="{x:Null}" Foreground="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
         <Label Content="Papel" HorizontalAlignment="Left" Height="33" Margin="54,590,0,0" VerticalAlignment="Top" Width="94" FontSize="16"/>
         <ComboBox x:Name="SelectPapel" DisplayMemberPath="Nombre" SelectedValuePath="PKPapel" HorizontalAlignment="Left" Margin="43,633,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnAddAlumno" Content="Guardar" HorizontalAlignment="Left" Height="42" Margin="45,679,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="SpringGreen" Click="btnAddAlumno_Click" />
@@ -59,9 +60,8 @@
             </Button.Background>
         </Button>
         <Label Content="Cerrar Sesion" HorizontalAlignment="Left" Height="26" Margin="99,747,0,0" VerticalAlignment="Top" Width="97" FontSize="14"/>
-        <TextBox x:Name="txtFkCarreras" HorizontalAlignment="Left" Height="35" Margin="23,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" FontSize="16"/>
-        <Label Content="Grupos" HorizontalAlignment="Left" Height="40" Margin="127,61,0,0" VerticalAlignment="Top" Width="82" FontSize="20"/>
-        <TextBox x:Name="txtFkGrupo" HorizontalAlignment="Left" Height="35" Margin="127,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" FontSize="16"/>
+        <Label Content="Grupos" HorizontalAlignment="Left" Height="40" Margin="199,61,0,0" VerticalAlignment="Top" Width="82" FontSize="20"/>
+        <ComboBox x:Name="SelectGrupos" DisplayMemberPath="NombreGrupos" SelectedValuePath="PKGrupos" HorizontalAlignment="Left" Height="35" Margin="309,61,0,0" VerticalAlignment="Top" Width="155"/>
 
     </Grid>
 </Window>

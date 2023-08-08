@@ -105,6 +105,37 @@ namespace ProyectoFinal23cv.Services
             }
         }
 
+        public List<Carreras> GetCarrer()
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    List<Carreras> care = _context.Carreras.ToList();
+                    return care;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Sucedio un error " + ex.Message);
+            }
+        }
+
+        public List<Grupos> GetGrup()
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    List<Grupos> go = _context.Grupos.ToList();
+                    return go;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Sucedio un error " + ex.Message);
+            }
+        }
 
         public Alumnos GetUserByIdAlu(int alutId)
         {

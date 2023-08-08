@@ -27,7 +27,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Num.Control" Binding="{Binding PkMaestros}"/>
                 <DataGridTextColumn Header="Num.Carreras" Binding="{Binding FkCarreras }"/>
-                <DataGridTextColumn Header="Num.Grupos" Binding="{Binding FkGrupos}"/>
+                <DataGridTextColumn Header="Num.Grupos" Binding="{Binding FkGrupos }"/>
                 <DataGridTextColumn Header="NombreMaestro" Binding="{Binding NombreMaestros}"/>
                 <DataGridTextColumn Header="Especialidad" Binding="{Binding Especialidad}"/>
                 <DataGridTextColumn Header="Fecha Registrada" Binding="{Binding FechasRegistrada}"/>
@@ -63,9 +63,11 @@
             </Button.Background>
         </Button>
         <Label Content="Cerrar Sesion" HorizontalAlignment="Left" Height="24" Margin="46,603,0,0" VerticalAlignment="Top" Width="80" Foreground="#DDFFFFFF"/>
-        <Label Content="Num.Carrera" HorizontalAlignment="Left" Height="43" Margin="359,572,0,0" VerticalAlignment="Top" Width="89" Foreground="White" FontSize="14"/>
-        <TextBox x:Name="txtFkCarreras" HorizontalAlignment="Left" Height="34" Margin="463,573,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Foreground="White" FontSize="16"/>
+        <Label Content="Nom.Carrera" HorizontalAlignment="Left" Height="43" Margin="359,572,0,0" VerticalAlignment="Top" Width="89" Foreground="White" FontSize="14"/>
+        <ComboBox x:Name="SelectCarreras" DisplayMemberPath="NombreCarreras" SelectedValuePath="PKCarreras" HorizontalAlignment="Left" Height="32" Margin="464,572,0,0" VerticalAlignment="Top" Width="151"/>
         <Label Content="Num.Grupos" HorizontalAlignment="Left" Height="26" Margin="646,578,0,0" VerticalAlignment="Top" Width="116" FontSize="14" Foreground="White"/>
-        <TextBox x:Name="txtFkGrupos" HorizontalAlignment="Left" Height="32" Margin="762,572,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" FontSize="16" Foreground="White"/>
+        <ComboBox x:Name="SelectGrupos" DisplayMemberPath="NombreGrupos" SelectedValuePath="PKGrupos" HorizontalAlignment="Left" Height="32" Margin="777,575,0,0" VerticalAlignment="Top" Width="151"/>
+
+
     </Grid>
 </Window>
