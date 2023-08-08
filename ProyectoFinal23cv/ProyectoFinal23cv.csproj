@@ -12,6 +12,7 @@
     <None Remove="ancestors.png" />
     <None Remove="carrera.jpeg" />
     <None Remove="classmates.png" />
+    <None Remove="consultin.png" />
     <None Remove="esconder.png" />
     <None Remove="graduates.png" />
     <None Remove="iniciar-sesion.png" />
@@ -24,8 +25,10 @@
     <None Remove="people.png" />
     <None Remove="resurt.jpeg" />
     <None Remove="room.png" />
+    <None Remove="search %281%29.png" />
     <None Remove="show.png" />
     <None Remove="teacher.png" />
+    <None Remove="text.png" />
     <None Remove="Vistas-WPF\Admi.jpg" />
     <None Remove="Vistas-WPF\apagado.jpg" />
     <None Remove="Vistas-WPF\back.png" />
@@ -51,6 +54,7 @@
     <Resource Include="ancestors.png" />
     <Resource Include="carrera.jpeg" />
     <Resource Include="classmates.png" />
+    <Resource Include="consultin.png" />
     <Resource Include="esconder.png" />
     <Resource Include="graduates.png" />
     <Resource Include="iniciar-sesion.png" />
@@ -63,8 +67,10 @@
     <Resource Include="people.png" />
     <Resource Include="resurt.jpeg" />
     <Resource Include="room.png" />
+    <Resource Include="search (1).png" />
     <Resource Include="show.png" />
     <Resource Include="teacher.png" />
+    <Resource Include="text.png" />
     <Resource Include="Vistas-WPF\Admi.jpg" />
     <Resource Include="Vistas-WPF\apagado.jpg" />
     <Resource Include="Vistas-WPF\back.png" />

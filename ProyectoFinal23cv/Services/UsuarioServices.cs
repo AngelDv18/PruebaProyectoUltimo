@@ -132,5 +132,14 @@ namespace ProyectoFinal23cv.Services
                 throw new Exception("Sucedio un error: " + ex.Message);
             }
         }
-    }  
+
+        public List<Usuario> BuscarUsuarios(string filtro)
+        {
+            using (var _context = new ApplicationDbContext())
+            {
+                return _context.Usuarios.Where(u => u.PkUsuario.Equals(filtro) || u.Nombre.Contains(filtro) ||
+                u.UserName.Contains(filtro) || u.Password.Contains(filtro)).ToList();
+            }
+        }
+    }
 }

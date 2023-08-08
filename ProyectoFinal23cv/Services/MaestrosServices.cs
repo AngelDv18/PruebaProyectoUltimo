@@ -119,5 +119,14 @@ namespace ProyectoFinal23cv.Services
                 throw new Exception("Sucedio un error: " + ex.Message);
             }
         }
+
+        public List<Maestros> BuscarMaestros(string filtro)
+        {
+            using (var _context = new ApplicationDbContext())
+            {
+                return _context.Maestros.Where(m => m.PkMaestros.Equals(filtro) ||
+                m.NombreMaestros.Contains(filtro) || m.Especialidad.Contains(filtro)).ToList();
+            }
+        }
     }
 }

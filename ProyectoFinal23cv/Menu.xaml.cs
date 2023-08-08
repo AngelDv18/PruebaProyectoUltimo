@@ -39,7 +39,7 @@ namespace ProyectoFinal23cv
             {
                 Alumno alumn = new Alumno();
                 alumn.Show();
-                Hide();
+                    Close();
             }
             else
             {
@@ -54,7 +54,7 @@ namespace ProyectoFinal23cv
             {
                 Master mast = new Master();
                 mast.Show();
-                Hide();
+                Close();
             }
             else
             {
@@ -68,7 +68,7 @@ namespace ProyectoFinal23cv
             {
                 Carrera car = new Carrera();
                 car.Show();
-                Hide();
+                Close();
             }
             else
             {
@@ -82,7 +82,7 @@ namespace ProyectoFinal23cv
             {
                 Grupo gru = new Grupo();
                 gru.Show();
-                Hide();
+                Close();
             }
             else
             {
@@ -96,7 +96,7 @@ namespace ProyectoFinal23cv
             {
                 Sistemas sa = new Sistemas();
                 sa.Show();
-                Hide();
+                Close();
             }
             else
             {

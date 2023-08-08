@@ -16,7 +16,6 @@ namespace ProyectoFinal23cv.Entities
         public string ApellidoP { get; set;}
         public string ApellidoM { get; set;}
         public DateTime Fechaqueregistro { get; set;}
-
         [ForeignKey("Papel")]
         public int? FkPapel { get; set; }
         public Papel Papel { get; set; }

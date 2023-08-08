@@ -10,22 +10,24 @@
         <Label Content="Nombre Carrera" HorizontalAlignment="Left" Height="38" Margin="24,225,0,0" VerticalAlignment="Top" Width="154" FontSize="20"/>
         <TextBox x:Name="txtNombreCarreras" HorizontalAlignment="Left" Height="39" Margin="31,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"/>
         <TextBox x:Name="txtPKCarrera" HorizontalAlignment="Left" Height="37" Margin="125,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" IsEnabled="False" FontSize="20" CaretBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}"/>
-        <Button x:Name="btnAdd" Content="Save" HorizontalAlignment="Left" Height="42" Margin="31,600,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FFFFE700" Click="btnAdd_Click"  />
+        <Button x:Name="btnAdd" Content="Guardar" HorizontalAlignment="Left" Height="42" Margin="31,600,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FFFF00F3" Click="btnAdd_Click"  />
         <DataGrid x:Name="CarreraTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="247,136,36,90" FontSize="14" FontWeight="Bold"  >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding PKCarrera}"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding PKCarreras}"/>
+                <DataGridTextColumn Header="Num.Maestros" Binding="{Binding }"/>
+                <DataGridTextColumn Header="Num.Alumnos" Binding="{Binding }"/>
                 <DataGridTextColumn Header="Nombre Carrera" Binding="{Binding NombreCarreras}"/>
-                <DataGridTemplateColumn Header="Edit">
+                <DataGridTemplateColumn Header="Editar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="EditItemCarrera" Content="Edit" Background="Yellow" Foreground="#FF020202" Click="EditItemCarrera_Click" />
+                            <Button x:Name="EditItemCarrera" Content="Editar" Background="Yellow" Foreground="#FF020202" Click="EditItemCarrera_Click" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Delete">
+                <DataGridTemplateColumn Header="Eliminar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="DeleteItemCarrera" Content="Delete" Background="Red" Click="DeleteItemCarrera_Click"/>
+                            <Button x:Name="DeleteItemCarrera" Content="Eliminar" Background="Red" Click="DeleteItemCarrera_Click" Width="86"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

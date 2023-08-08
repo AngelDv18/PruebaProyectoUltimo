@@ -96,6 +96,15 @@ namespace ProyectoFinal23cv.Services
                 throw new Exception("Sucedio un error: " + ex.Message);
             }
         }
+
+        public List<Grupos> BuscarGrupos(string filtro)
+        {
+            using (var _context = new ApplicationDbContext())
+            {
+                return _context.Grupos.Where(g => g.PKGrupos.Equals(filtro) ||g.NombreGrupos.Contains(filtro) ||
+                                              g.NombreGrupos.Contains(filtro)).ToList();
+            }
+        }
     }
 }
 

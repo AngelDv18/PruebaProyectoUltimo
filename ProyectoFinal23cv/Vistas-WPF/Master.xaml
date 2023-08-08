@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal23cv.Vistas_WPF"
         mc:Ignorable="d"
-        Title="Master" Height="660" Width="1203">
+        Title="Master" Height="660" Width="1300">
     <Grid>
         <Grid.Background>
             <RadialGradientBrush>
@@ -21,26 +21,28 @@
         <TextBox x:Name="txtEspecialidad" Margin="9,200,1010,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="64" Foreground="#DDFFFFFF" BorderBrush="#89FFFFFF"/>
         <Label Content="Nombre Maestro" HorizontalAlignment="Left" Height="38" Margin="20,271,0,0" VerticalAlignment="Top" Width="158" FontSize="20" Foreground="#DDFFFFFF"/>
         <TextBox x:Name="txtNombreMaestros" HorizontalAlignment="Left" Height="39" Margin="15,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Foreground="#DDFFFFFF" BorderBrush="#89FFFFFF"/>
-        <Button x:Name="btnAddMaestro" Content="Save" HorizontalAlignment="Left" Height="42" Margin="31,537,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FF00FF47" Click="btnAddMaestro_Click" />
+        <Button x:Name="btnAddMaestro" Content="Guardar" HorizontalAlignment="Left" Height="42" Margin="31,537,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FF00FF47" Click="btnAddMaestro_Click" />
         <TextBox x:Name="txtPkMaestros" HorizontalAlignment="Left" Height="37" Margin="213,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" FontSize="20" Foreground="{x:Null}" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
         <DataGrid x:Name="MasterTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="213,136,13,90" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#1FFF0000" Foreground="#DD000000" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Num.Control" Binding="{Binding PkMaestros}"/>
+                <DataGridTextColumn Header="Num.Carreras" Binding="{Binding }"/>
+                <DataGridTextColumn Header="Num.Grupos" Binding="{Binding }"/>
                 <DataGridTextColumn Header="NombreMaestro" Binding="{Binding NombreMaestros}"/>
                 <DataGridTextColumn Header="Especialidad" Binding="{Binding Especialidad}"/>
                 <DataGridTextColumn Header="Fecha Registrada" Binding="{Binding FechasRegistrada}"/>
-                <DataGridTextColumn Header="Papel" Binding="{Binding Path.Nombre}"/>
-                <DataGridTemplateColumn Header="Edit">
+                <DataGridTextColumn Header="Papel" Binding="{Binding Papel.Nombre}"/>
+                <DataGridTemplateColumn Header="Editar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="EditItemsMaster" Content="Edit" Click="EditItemsMaster_Click" Background="Yellow" Foreground="Black" />
+                            <Button x:Name="EditItemsMaster" Content="Editar" Click="EditItemsMaster_Click" Background="Yellow" Foreground="Black" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Delete">
+                <DataGridTemplateColumn Header="Eliminar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="DeleteItemsMaster" Content="Delete" Click="DeleteItemsMaster_Click" Background="Red"/>
+                            <Button x:Name="DeleteItemsMaster" Content="Eliminar" Click="DeleteItemsMaster_Click" Background="Red"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

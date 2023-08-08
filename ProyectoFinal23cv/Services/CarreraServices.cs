@@ -96,5 +96,15 @@ namespace ProyectoFinal23cv.Services
                 throw new Exception("Sucedio un error: " + ex.Message);
             }
         }
+
+        public List<Carreras> BuscarCarreras(string filtro)
+        {
+            using (var _context = new ApplicationDbContext())
+            {
+                return _context.Carreras.Where(c => c.PKCarreras.Equals(filtro) || c.NombreCarreras.Contains(filtro) ||
+                                              c.NombreCarreras.Contains(filtro)).ToList();
+            }
+        }
+
     }
 }

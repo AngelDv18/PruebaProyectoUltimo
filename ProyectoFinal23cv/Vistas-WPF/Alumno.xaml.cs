@@ -25,7 +25,7 @@ namespace ProyectoFinal23cv.Vistas_WPF
         {
             InitializeComponent();
             GetUserTableAlu();
-            GetPapeles();
+            GetPapeles();      
         }
         AlumnosServices servis = new AlumnosServices();
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -57,7 +57,7 @@ namespace ProyectoFinal23cv.Vistas_WPF
             }
             else
             {    //tarea realalizar la funcion editar y eliminar
-                // Editar usuario existente mediante su ID7
+                // Editar usuario existente mediante su ID
                 int alutId = int.Parse(txtPkAlumno.Text);
                 alu = servis.GetUserByIdAlu(alutId);
 
@@ -69,7 +69,7 @@ namespace ProyectoFinal23cv.Vistas_WPF
                     alu.ApellidoM = txtApellidoM.Text;
                     alu.Fechaqueregistro = DateTime.Now;
                     alu.FkPapel = int.Parse(SelectPapel.SelectedValue.ToString());
-
+ 
                     txtNombreAlumno.Clear();
                     txtApellidoP.Clear();
                     txtApellidoM.Clear();
@@ -127,7 +127,6 @@ namespace ProyectoFinal23cv.Vistas_WPF
                 GetUserTableAlu();
             }
         }
-
         private void Cerrarcesion_Click(object sender, RoutedEventArgs e)
         {
             {

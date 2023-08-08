@@ -122,5 +122,12 @@ namespace ProyectoFinal23cv.Vistas_WPF
             login.Show();
             Close();
         }
+
+        private void btnConsulta_Click(object sender, RoutedEventArgs e)
+        {
+            Consultas consul = new Consultas();
+            consul.Show();
+            Close();
+        }
     }
 }

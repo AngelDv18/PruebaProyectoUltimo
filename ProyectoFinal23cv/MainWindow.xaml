@@ -18,7 +18,7 @@
         <Border Height="594" VerticalAlignment="Center" CornerRadius="0 0 180 0" MouseDown="Border_MouseDown" Margin="72,0,510,0"/>
         <materialDesign:PackIcon Kind="User" Width="36" Height="46" Foreground="#FF8203EB" Margin="565,252,0,0"/>
         <TextBox x:Name="txtUserName"  materialDesign:HintAssist.Hint=" Introducir Usuario " Margin="601,257,159,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Background="#FFE8E5F0" FontSize="18" BorderBrush="#FF001AD3" Foreground="Black" SelectionBrush="#FF5D00F9" CaretBrush="#FF5D00F9" />
-        <Button x:Name="btnLogin" Content=" Continuar" HorizontalAlignment="Left" Margin="583,420,0,0" VerticalAlignment="Top" Height="48" Width="258" FontSize="24" Click="btnLogin_Click" BorderThickness="2,2,2,1" BorderBrush="{x:Null}" Foreground="Black" Background="#FF800BDF"/>
+        <Button x:Name="btnLogin" Content=" Continuar" HorizontalAlignment="Left" Margin="583,420,0,0" VerticalAlignment="Top" Height="48" Width="258" FontSize="24" Click="btnLogin_Click" BorderThickness="2,2,2,1" BorderBrush="{x:Null}" Foreground="White" Background="#FF800BDF"/>
         <Button Margin="945,0,-1,644" Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{x:Null}"
                  ToolTip="Close" x:Name="btnExit" Click="btnExit_Click" BorderBrush="{x:Null}">
             <materialDesign:PackIcon Kind="CloseBoxMultipleOutline" Foreground="Black" Width="26" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center" />

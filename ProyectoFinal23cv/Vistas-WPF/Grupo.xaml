@@ -5,27 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal23cv.Vistas_WPF"
         mc:Ignorable="d"
-        Title="Grupo" Height="750" Width="924">
+        Title="Grupo" Height="750" Width="1053">
     <Grid>
         <TextBox x:Name="txtPKGrupos" HorizontalAlignment="Left" Height="37" Margin="125,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" IsEnabled="False" FontSize="20" CaretBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}"/>
         <Label Content="Nombre Grupo" HorizontalAlignment="Left" Height="38" Margin="24,225,0,0" VerticalAlignment="Top" Width="148" FontSize="20" Foreground="#DD000000"/>
         <TextBox x:Name="txtNombreGrupos" HorizontalAlignment="Left" Height="39" Margin="31,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" BorderBrush="#89000000"/>
-        <Button x:Name="btnAdd" Content="Save" HorizontalAlignment="Left" Height="42" Margin="31,600,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FF78FF00" Click="btnAdd_Click" />
+        <Button x:Name="btnAdd" Content="Guardar" HorizontalAlignment="Left" Height="42" Margin="31,600,0,0" VerticalAlignment="Top" Width="132" FontSize="24" FontWeight="Bold" Background="#FF78FF00" Click="btnAdd_Click" />
         <DataGrid x:Name="GrupoTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="247,136,36,90" FontSize="14" FontWeight="Bold"  >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding PKGrupos}"/>
                 <DataGridTextColumn Header="Nombre Grupo" Binding="{Binding NombreGrupos}"/>
-                <DataGridTemplateColumn Header="Edit">
+                <DataGridTextColumn Header="Num.Maestro" Binding="{Binding }"/>
+                <DataGridTextColumn Header="Num.Alumno" Binding="{Binding }"/>
+                <DataGridTemplateColumn Header="Editar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="EditItemGrupo" Content="Edit" Background="Yellow" Foreground="#FF020202" Click="EditItemGrupo_Click" />
+                            <Button x:Name="EditItemGrupo" Content="Editar" Background="Yellow" Foreground="#FF020202" Click="EditItemGrupo_Click" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Delete">
+                <DataGridTemplateColumn Header="Eliminar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="DeleteItemGrupo" Content="Delete" Background="Red" Click="DeleteItemGrupo_Click"/>
+                            <Button x:Name="DeleteItemGrupo" Content="Eliminar" Background="Red" Click="DeleteItemGrupo_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

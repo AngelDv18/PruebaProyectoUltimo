@@ -31,12 +31,12 @@ namespace ProyectoFinal23cv.Services
                         _context.SaveChanges();
                     }
                 }
-            }
+        }
             catch (Exception ex)
             {
                 throw new Exception("Error: " + ex.Message);
-            }
-        }
+    }
+}
         public void EditAlumn(Alumnos alum)
         {
             try
@@ -102,6 +102,8 @@ namespace ProyectoFinal23cv.Services
                 throw new Exception("Sucedio un error " + ex.Message);
             }
         }
+
+
         public Alumnos GetUserByIdAlu(int alutId)
         {
             try
@@ -115,6 +117,16 @@ namespace ProyectoFinal23cv.Services
             catch (Exception ex)
             {
                 throw new Exception("Sucedio un error: " + ex.Message);
+            }
+        }
+
+
+        public List<Alumnos> BuscarAlumnos(string filtro)
+        {
+            using (var _context = new ApplicationDbContext())
+            {
+                return _context.Alumnos.Where(a => a.PkAlumno.Equals(filtro) || a.NombreAlumno.Contains(filtro) ||
+                a.ApellidoP.Contains(filtro) || a.ApellidoM.Contains(filtro)).ToList();
             }
         }
     }
