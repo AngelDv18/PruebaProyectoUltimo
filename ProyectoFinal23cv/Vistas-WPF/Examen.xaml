@@ -1,0 +1,17 @@
+﻿<Window x:Class="ProyectoFinal23cv.Vistas_WPF.Examen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoFinal23cv.Vistas_WPF"
+        mc:Ignorable="d"
+        Title="Examen" Height="450" Width="800">
+    <Grid>
+        <!-- Aquí puedes agregar cualquier contenido visual que desees -->
+        <StackPanel Margin="20">
+            <TextBlock Text="Respuesta de la solicitud HTTP:" FontWeight="Bold" FontSize="16" Margin="0 0 0 10"/>
+            <TextBox x:Name="txtResponse" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" MinHeight="200" Margin="0 0 0 10"/>
+            <Button Content="Obtener Eventos" Click="ObtenerEventos_Click" Width="120"/>
+        </StackPanel>
+    </Grid>
+</Window>

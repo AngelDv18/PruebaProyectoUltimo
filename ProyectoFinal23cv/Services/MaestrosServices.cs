@@ -4,8 +4,11 @@ using ProyectoFinal23cv.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Http.Headers;
+
 
 namespace ProyectoFinal23cv.Services
 {
@@ -168,6 +171,26 @@ namespace ProyectoFinal23cv.Services
 
                 //return _context.Maestros.Where(m => m.PkMaestros.Equals(filtro) ||
                 //m.NombreMaestros.Contains(filtro) || m.Especialidad.Contains(filtro)).ToList();
+            }
+        }
+        public async void Examen ()
+        {
+            var client = new HttpClient();
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri("https://batboiko-exam-simulator-v1.p.rapidapi.com/store"),
+                Headers =
+    {
+        { "X-RapidAPI-Key", "3a1ec54606mshccec2b330a113dap136c02jsn966f27504bdb" },
+        { "X-RapidAPI-Host", "batboiko-exam-simulator-v1.p.rapidapi.com" },
+    },
+            };
+            using (var response = await client.SendAsync(request))
+            {
+                response.EnsureSuccessStatusCode();
+                var body = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(body);
             }
         }
     }

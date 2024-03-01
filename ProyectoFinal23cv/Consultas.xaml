@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="Consultas" Height="480" Width="900">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="155*"/>
+            <ColumnDefinition Width="166*"/>
+            <ColumnDefinition Width="159*"/>
+            <ColumnDefinition Width="161*"/>
+            <ColumnDefinition Width="158*"/>
+            <ColumnDefinition Width="101*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="/consultin.png"/>
         </Grid.Background>
@@ -14,7 +22,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10,10,353,10">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10,10,94,10" Grid.ColumnSpan="4">
             <ComboBox x:Name="cmbTabla" Width="150" Margin="5">
                 <ComboBoxItem Content="Usuarios"/>
 
@@ -45,14 +53,7 @@
             <Button x:Name="btnSalir" Content="Salir" Click="btnSalir_Click" BorderBrush="Red" Background="#FFF37B21"/>
         </StackPanel>
 
-        <DataGrid Grid.Row="1" x:Name="dataGrid" Margin="55,10,64,25" Foreground="Black" FontSize="14" GridLinesVisibility="All" HorizontalGridLinesBrush="Black" RenderTransformOrigin="0.5,0" FontFamily="Bahnschrift Condensed" BorderBrush="#1F000000" VerticalGridLinesBrush="Black" >
-            <DataGrid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFA2C583" Offset="0"/>
-                    <GradientStop Color="Transparent" Offset="1"/>
-                </LinearGradientBrush>
-            </DataGrid.Background>
-        </DataGrid>
-        <Button x:Name="btnAdios" Content="Menu" HorizontalAlignment="Left" Height="45" Margin="732,0,0,0" VerticalAlignment="Center" Width="85" FontSize="16" Background="#FFBF21F3" Click="btnAdios_Click"/>
+        <DataGrid Grid.Row="1" x:Name="dataGrid" Margin="55,10,64,25" Foreground="Black" FontSize="14" GridLinesVisibility="All" HorizontalGridLinesBrush="Black" RenderTransformOrigin="0.5,0" FontFamily="Bahnschrift Condensed" BorderBrush="#1F000000" VerticalGridLinesBrush="Black" Background="White" Grid.ColumnSpan="6" />
+        <Button x:Name="btnAdios" Content="Menu" HorizontalAlignment="Left" Height="45" Margin="91,0,0,0" VerticalAlignment="Center" Width="85" FontSize="16" Background="#FFBF21F3" Click="btnAdios_Click" Grid.Column="4" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

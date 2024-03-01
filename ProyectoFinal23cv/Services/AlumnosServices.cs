@@ -156,14 +156,10 @@ namespace ProyectoFinal23cv.Services
         {
             using (var _context = new ApplicationDbContext())
             {
-                return _context.Alumnos
-                    //.Include(m => m.FkCarreras) // Incluye la relación con Carrera
-                    //                   .Include(m => m.FkGrupos)   // Incluye la relación con Grupo
-                                       .Where(a => a.PkAlumno.Equals(filtro) || 
-                                      a.NombreAlumno.Contains(filtro) ||
-                                      a.ApellidoP.Contains(filtro) || 
+                return _context.Alumnos.Where(a => a.PkAlumno.Equals(filtro) || 
+                                             a.NombreAlumno.Contains(filtro) ||
+                                                a.ApellidoP.Contains(filtro) || 
                                       a.ApellidoM.Contains(filtro)).ToList();
-
             }
         }
     }

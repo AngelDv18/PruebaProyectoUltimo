@@ -51,9 +51,9 @@ namespace ProyectoFinal23cv
                     {
                         {
                             MessageBox.Show("Sesión Iniciada Como Super Administrador");
-                            userRole = "SA";
+                            //userRole = "SA";
                         Menu menu = new Menu();
-                        menu.UserRole = userRole; // Establecer el rol del SA en la ventana Menu
+                        //menu.UserRole = userRole; // Establecer el rol del SA en la ventana Menu
                         menu.Show();
                         Close();
                         //Menu menu = new Menu();
@@ -65,7 +65,7 @@ namespace ProyectoFinal23cv
                     {
                         {
                             MessageBox.Show("Sesión Iniciada Como Administrador");
-                            userRole = "Admin";
+                            //userRole = "Admin";
                         Sistemas admi = new Sistemas();
                         admi.Show();
                         Close();                                                    
@@ -75,9 +75,9 @@ namespace ProyectoFinal23cv
                     {
                         {
                             MessageBox.Show("Sesión Iniciada Como Alumno");
-                            userRole = "Alumnos";
+                            //userRole = "Alumnos";
                         Menu alumnos = new Menu();
-                        alumnos.UserRole = userRole; // Establecer el rol del Alumno en la ventana Menu
+                      /*  alumnos.UserRole = userRole;*/ // Establecer el rol del Alumno en la ventana Menu
                         alumnos.Show();
                         Close();
                         //Menu alumnos = new Menu();
@@ -90,9 +90,9 @@ namespace ProyectoFinal23cv
                         {
                             MessageBox.Show("Sesión Iniciada Como Maestro");
 
-                            userRole = "Maestros";
+                            //userRole = "Maestros";
                             Menu mas = new Menu();
-                            mas.UserRole = userRole; // Establecer el rol del Maestro en la ventana Menu
+                           /* mas.UserRole = userRole; */// Establecer el rol del Maestro en la ventana Menu
                             mas.Show();
                             Close();
                             //Menu maestos = new Menu();
